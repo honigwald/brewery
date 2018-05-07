@@ -2,7 +2,7 @@ class Sensor:
 	def __init__(self, id, filehandler):
 		self.id = id 
 		self.filehandler = filehandler
-		self.temp = None
+		self.value = None
 
 	def getTemprature(self):
 		if self.filehandler == None:
@@ -12,7 +12,10 @@ class Sensor:
 			while nextTry < 3:
 				try:
 					file = open(self.filehandler)
-					self.temp = int(file.readline())
+					#self.value = int(file.readline())
+					content = file.readlines()
+					self.value = float(content[1].split("=")[1])
+					self.value /= 1000
 					break
 				except (IOError):
 					print "IOError: File not found"
@@ -22,7 +25,7 @@ class Sensor:
 				nextTry = nextTry + 1
 				if nextTry < 3:
 					file.close()
-			return self.temp
+			return self.value
 
 	def printStatistic(self):
-		print "Sensor ID: %i\t Temprature: %i" % (self.id, self.temp) 
+		print "Sensor ID: %i\t Temprature: %i" % (self.id, self.value) 
