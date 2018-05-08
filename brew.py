@@ -2,6 +2,7 @@ import lib.List as l
 import lib.Sensor as s
 import lib.Timer as t
 import lib.Stepper as st
+import lib.rf433 as rf
 from time import sleep
 import time 
 import timeit
@@ -25,10 +26,14 @@ def brewing(Node):
 		print "Heating up: Start"
 		sleep(1)
 		while currTemp < targetTemp:
-			print "Heating Up: [%i/%i]" % (currTemp, targetTemp)
+			print "Heating Up: [%iC / %iC]" % (currTemp, targetTemp)
+			print "----------------------------"
+			print ""
+			rf.on()
 			sleep(2)
 			currTemp = s1.getTemprature()
 		print "Heating up: Finished"
+		rf.off()
 		time.sleep(1)
 	else:
 		# hold temprature
@@ -37,10 +42,20 @@ def brewing(Node):
 		timer = t.Timer()
 		timer.start(duration)
 		while timer.isRunning():
-			print "Hold Temprature: [%i/%i]" % (timer.getRuntime(), duration)
+			print "Hold Temprature: [%iC / %iC]" % (currTemp, targetTemp)
+			print "Hold Temprature: [%is / %is]" % (timer.getRuntime(), duration)
+			print "----------------------------"
+			print ""
+			if currTemp < targetTemp:
+				rf.on()
+				stepper.right(25)
+			else:
+				rf.off()
+				stepper.left(25)
 			timer.tick()
+			currTemp = s1.getTemprature()
 		print "Hold Temprature: Finished"
-		sleep(1)
+		rf.off()
 
 # STEP = [TARGET-TEMP, START-TIME, END-TIME, DURATION]
 # this array stores the values for each step given by recipe
@@ -49,30 +64,38 @@ step = [0, 0, 0, 0]
 # init list with used receipy
 finished, brew = l.List(), l.List()
 brew.append([30, -1, -1, -1])
-brew.append([10, -1, -1, 20])
-brew.append([20, -1, -1, -1])
-brew.append([20, -1, -1, 27])
+brew.append([30, -1, -1, 20])
+brew.append([35, -1, -1, -1])
+brew.append([35, -1, -1, 27])
 
 # init thermosensor
 s1 = s.Sensor(1, SENSOR_1)
 s2 = s.Sensor(2, SENSOR_2)
+print s1.getTemprature()
+print s2.getTemprature()
+
+# init rf433 jack
+rf = rf.Rf433()
+rf.on()
+sleep(2)
+rf.off()
 
 # init stepper
 stepper = st.Stepper(GPIO_STEPPER)
 # set n:=250 for nearly one full rotation
 stepper.right(25)
-#stepper.left(25)
+stepper.left(25)
+
 
 # some further initializations
 elem = brew.head
 stepNr = 0
 
+
 # start process
-'''
 while elem != None:
 	stepNr = stepNr + 1
 	print "Step: %i\t Node: %s" % (stepNr, elem)
 	brewing(elem)
 	elem = elem.getNext()
 	print ""
-'''
