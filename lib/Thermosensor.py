@@ -1,4 +1,6 @@
-class Sensor:
+convertToDegree = 1000
+
+class Thermosensor:
 	def __init__(self, id, filehandler):
 		self.id = id 
 		self.filehandler = filehandler
@@ -12,10 +14,9 @@ class Sensor:
 			while nextTry < 3:
 				try:
 					file = open(self.filehandler)
-					#self.value = int(file.readline())
 					content = file.readlines()
 					self.value = float(content[1].split("=")[1])
-					self.value /= 1000
+					self.value /= convertToDegree
 					break
 				except (IOError):
 					print "IOError: File not found"

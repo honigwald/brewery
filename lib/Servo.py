@@ -1,4 +1,4 @@
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 import time         
 
 #PIN = 03
@@ -32,8 +32,8 @@ class Servo:
 		self.pwm.start(0)     
 
 ### Some Testcases
-servo = Servo(03)
-servo.changeAngle(0)
+#servo = Servo(03)
+#ervo.changeAngle(0)
 #servo.changeAngle(22.5)
 #servo.changeAngle(45)
 #servo.changeAngle(67.5)
@@ -41,5 +41,5 @@ servo.changeAngle(0)
 #servo.changeAngle(112.5)
 #servo.changeAngle(135)
 #servo.changeAngle(157.5)
-servo.changeAngle(180)
-servo.changeAngle(0)
+#ervo.changeAngle(180)
+#ervo.changeAngle(0)
