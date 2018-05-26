@@ -1,10 +1,11 @@
 import lib.List as ls 
 import lib.Thermosensor as ts
-import lib.Timer as timer
+import lib.Timer as ti
 import lib.Servo as sv
 import lib.rf433 as rf
 
 from time import sleep
+import time 
 import timeit
 import ConfigParser
 
@@ -44,7 +45,7 @@ def brewing(Node):
 		# hold temprature
 		print "Hold Temprature: Start"
 		sleep(1)
-		timer = t.Timer()
+		timer = ti.Timer()
 		timer.start(duration)
 		while timer.isRunning():
 			print "Hold Temprature: [%iC / %iC]" % (currTemp, targetTemp)
@@ -97,11 +98,11 @@ else:
 	# init thermosensor
 	s1Id = 1
 	s1Path = config.get("Thermo_1", "path")
-	ts = ts.Thermosensor(s1Id, s1Path)
+	s1 = ts.Thermosensor(s1Id, s1Path)
 	#s2 = ts.Sensor(2, SENSOR_2)
 
 	## init servo
-	servoPin = config.get("Servo_1", "pin")
+	servoPin = config.getint("Servo_1", "pin")
 	servo = sv.Servo(servoPin)
 
 	## init rf433 jack
