@@ -35,12 +35,19 @@ def brewing(Node):
 			print "----------------------------"
 			print ""
 			#rf.on()
-			servo.changeAngle(180)
-			sleep(2)
+
+			n = 5
+			if (currTemp + n) < targetTemp:
+				# turn heat to maximum
+				servo.changeAngle(180)
+			else:
+				# slow heating process down
+				servo.changeAngle(135)
+			sleep(1)
 			currTemp = s1.getTemprature()
 		print "Heating up: Finished"
 		#rf.off()
-		time.sleep(1)
+		sleep(1)
 	else:
 		# hold temprature
 		print "Hold Temprature: Start"
@@ -84,7 +91,7 @@ brew.append([30, -1, -1, 300])
 brew.append([35, -1, -1, -1])
 brew.append([35, -1, -1, 27])
 elem = brew.head
-stepNr = 0
+step_counter = 0
 
 # get running mode
 mode = config.get("Modus", "mode")
@@ -95,25 +102,23 @@ if mode == "test":
 
 # program is running in prod-mode
 else:
-	# init thermosensor
-	s1Id = 1
-	s1Path = config.get("Thermo_1", "path")
-	s1 = ts.Thermosensor(s1Id, s1Path)
+	## init thermosensor
+	s1_id = 1
+	s1_path = config.get("Thermo_1", "path")
+	s1 = ts.Thermosensor(s1_id, s1_path)
 	#s2 = ts.Sensor(2, SENSOR_2)
 
 	## init servo
-	servoPin = config.getint("Servo_1", "pin")
-	servo = sv.Servo(servoPin)
+	servo_pin = config.getint("Servo_1", "pin")
+	servo = sv.Servo(servo_pin)
 
 	## init rf433 jack
 	#rf = rf.Rf433()
 
 	# start process
 	while elem != None:
-		stepNr = stepNr + 1
-		print "Step: %i\t Node: %s" % (stepNr, elem)
+		step_counter = step_counter + 1
+		print "Step: %i\t Node: %s" % (step_counter, elem)
 		brewing(elem)
 		elem = elem.getNext()
 		print ""
-
-
