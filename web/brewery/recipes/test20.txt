@@ -1,1 +1,0 @@
-{"Schritt 1":{"name":"sqws","Temperatur":"2","Zeit":"3"},"Schritt 2":{"Name":"","Temperatur":"","Zeit":""}}

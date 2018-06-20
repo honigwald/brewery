@@ -1,1 +1,0 @@
-{"step1":{"name":"schritt1","temp":"5","time":"6"},"step2":{"name":"schritt2","temp":"5","time":"6"}}
