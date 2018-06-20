@@ -1,0 +1,1 @@
+Schritt 1 Name: {"recipeN":{"schritt1N":{"schritt1Temp":"50"},"schritt2N":{"schritt2Temp":"60","schritt2Zeit":"20"}}}
