@@ -1,11 +1,11 @@
-import lib.List as ls 
+import lib.List as ls
 import lib.Thermosensor as ts
 import lib.Timer as ti
 import lib.Servo as sv
 import lib.rf433 as rf
 
 from time import sleep
-import time 
+import time
 import timeit
 import ConfigParser
 
@@ -16,60 +16,77 @@ import ConfigParser
 '''
 # the magic happens here in testing mode
 def testing(Node):
-	print "Funktioniert"
+    print "Funktioniert"
+
+    servo_pin = config.getint("Servo_2", "pin")
+    servo2 = sv.Servo(servo_pin)
+    servo2.changeAngle(-180)
+    servo2.changeAngle(-0)
+
+    sleep(2)
+
+    servo_pin = config.getint("Servo_1", "pin")
+    servo1 = sv.Servo(servo_pin)
+
+    servo1.changeAngle(-180)
+    servo1.changeAngle(-0)
+    print s1.getTemprature()
 
 # the magic happens here in production mode
 def brewing(Node):
-	targetTemp = Node.getData()[0]
-	tStart = time.ctime()
-	tEnd = Node.getData()[2]
-	duration = Node.getData()[3]
-	currTemp = s1.getTemprature()
+    targetTemp = Node.getData()[0]
+    tStart = time.ctime()
+    tEnd = Node.getData()[2]
+    duration = Node.getData()[3]
+    currTemp = s1.getTemprature()
 
-	if duration == -1:
-		# heat up
-		print "Heating up: Start"
-		sleep(1)
-		while currTemp < targetTemp:
-			print "Heating Up: [%iC / %iC]" % (currTemp, targetTemp)
-			print "----------------------------"
-			print ""
-			#rf.on()
+    if duration == -1:
+        # heat up
+        print "Heating up: Start"
+        sleep(1)
+        while currTemp < targetTemp:
+            print "Heating Up: [%iC / %iC]" % (currTemp, targetTemp)
+            print "----------------------------"
+            print ""
+            #rf.on()
 
-			n = 5
-			if (currTemp + n) < targetTemp:
-				# turn heat to maximum
-				servo.changeAngle(180)
-			else:
-				# slow heating process down
-				servo.changeAngle(135)
-			sleep(1)
-			currTemp = s1.getTemprature()
-		print "Heating up: Finished"
-		#rf.off()
-		sleep(1)
-	else:
-		# hold temprature
-		print "Hold Temprature: Start"
-		sleep(1)
-		timer = ti.Timer()
-		timer.start(duration)
-		while timer.isRunning():
-			print "Hold Temprature: [%iC / %iC]" % (currTemp, targetTemp)
-			print "Hold Temprature: [%is / %is]" % (timer.getRuntime(), duration)
-			print "----------------------------"
-			print ""
-			if currTemp < targetTemp:
-				servo.changeAngle(135)
-				#rf.on()
-			else:
-				#rf.off()
-				servo.changeAngle(45)
-			timer.tick()
-			currTemp = s1.getTemprature()
-		print "Hold Temprature: Finished"
-		servo.changeAngle(0)
-		#rf.off()
+            n = 5
+            if (currTemp + n) < targetTemp:
+                # turn heat to maximum
+                servo1.changeAngle(-180)
+                servo2.changeAngle(-180)
+            else:
+                # slow heating process down
+                servo.changeAngle(-135)
+            sleep(1)
+            currTemp = s1.getTemprature()
+        print "Heating up: Finished"
+        #rf.off()
+        sleep(1)
+    else:
+        # hold temprature
+        print "Hold Temprature: Start"
+        sleep(1)
+        timer = ti.Timer()
+        timer.start(duration)
+        while timer.isRunning():
+            print "Hold Temprature: [%iC / %iC]" % (currTemp, targetTemp)
+            print "Hold Temprature: [%is / %is]" % (timer.getRuntime(), duration)
+            print "----------------------------"
+            print ""
+            if currTemp < targetTemp:
+                servo1.changeAngle(-90)
+                servo2.changeAngle(-90)
+                #rf.on()
+            else:
+                servo1.changeAngle(-45)
+                servo2.changeAngle(-45)
+                #rf.off()
+            timer.tick()
+            currTemp = s1.getTemprature()
+        print "Hold Temprature: Finished"
+        servo.changeAngle(0)
+        #rf.off()
 ''' 
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 | Some needed configurations before starting |
@@ -86,10 +103,10 @@ step = [0, 0, 0, 0]
 
 # init list with used receipy
 finished, brew = ls.List(), ls.List()
-brew.append([30, -1, -1, -1])
-brew.append([30, -1, -1, 300])
-brew.append([35, -1, -1, -1])
-brew.append([35, -1, -1, 27])
+brew.append([50, -1, -1, -1])
+brew.append([50, -1, -1, 60])
+brew.append([60, -1, -1, -1])
+brew.append([60, -1, -1, 100])
 elem = brew.head
 step_counter = 0
 
@@ -97,28 +114,34 @@ step_counter = 0
 mode = config.get("Modus", "mode")
 # program is running in test-mode
 if mode == "test":
-	print "TEST-MODUS"
-	testing(1)
+    print "TEST-MODUS"
+    s1_id = 1
+    s1_path = config.get("Thermo_1", "path")
+    s1 = ts.Thermosensor(s1_id, s1_path)
+    testing(1)
 
 # program is running in prod-mode
 else:
-	## init thermosensor
-	s1_id = 1
-	s1_path = config.get("Thermo_1", "path")
-	s1 = ts.Thermosensor(s1_id, s1_path)
-	#s2 = ts.Sensor(2, SENSOR_2)
+    ## init thermosensor
+    s1_id = 1
+    s1_path = config.get("Thermo_1", "path")
+    s1 = ts.Thermosensor(s1_id, s1_path)
+    #s2 = ts.Sensor(2, SENSOR_2)
 
-	## init servo
-	servo_pin = config.getint("Servo_1", "pin")
-	servo = sv.Servo(servo_pin)
+    ## init servo
+    servo_pin = config.getint("Servo_1", "pin")
+    servo1 = sv.Servo(servo_pin)
 
-	## init rf433 jack
-	#rf = rf.Rf433()
+    servo_pin = config.getint("Servo_2", "pin")
+    servo2 = sv.Servo(servo_pin)
 
-	# start process
-	while elem != None:
-		step_counter = step_counter + 1
-		print "Step: %i\t Node: %s" % (step_counter, elem)
-		brewing(elem)
-		elem = elem.getNext()
-		print ""
+    ## init rf433 jack
+    #rf = rf.Rf433()
+
+    # start process
+    while elem != None:
+        step_counter = step_counter + 1
+        print "Step: %i\t Node: %s" % (step_counter, elem)
+        brewing(elem)
+        elem = elem.getNext()
+        print ""
