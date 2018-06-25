@@ -3,6 +3,7 @@ import lib.Thermosensor as ts
 import lib.Timer as ti
 import lib.Servo as sv
 import lib.rf433 as rf
+import lib.pid as pid
 
 from time import sleep
 import time
@@ -17,19 +18,40 @@ import ConfigParser
 # the magic happens here in testing mode
 def testing(Node):
     print "Funktioniert"
+    p=pid.PID(3.0,0.4,1.2)
+    p.setPoint(40.0)
+    #while True:
+    #     pid = p.update(measurement_value)
+    print p.getError()
+    print p.getIntegrator()
+    print p.getDerivator()
+    print p.getPoint()
+    print p.update(s1.getTemprature())
 
     servo_pin = config.getint("Servo_2", "pin")
     servo2 = sv.Servo(servo_pin)
-    servo2.changeAngle(-180)
-    servo2.changeAngle(-0)
+    servo2.changeAngle(180)
 
-    sleep(2)
+    while s1.getTemprature() < 40:
+        if p.update(s1.getTemprature()) > 100:
+            print p.update(s1.getTemprature())
+            servo2.more()
+        elif p.update(s1.getTemprature()) < 20:
+            servo2.changeAngle(0)
+            print p.update(s1.getTemprature())
+        else:
+            servo2.less()
+        print s1.getTemprature()
+        sleep(2)
 
-    servo_pin = config.getint("Servo_1", "pin")
-    servo1 = sv.Servo(servo_pin)
 
-    servo1.changeAngle(-180)
-    servo1.changeAngle(-0)
+    servo2.changeAngle(0)
+
+    #servo_pin = config.getint("Servo_1", "pin")
+    #servo1 = sv.Servo(servo_pin)
+
+    #servo1.changeAngle(-180)
+    #servo1.changeAngle(-0)
     print s1.getTemprature()
 
 # the magic happens here in production mode
