@@ -51,10 +51,22 @@ def testing(Node):
         sleep(2)
         #oldvalue = pidvalue
 
-        #if temp > 
+        if abs(pidvalue) < 5:
+            #hard: stopheating
+            servo2.changeAngle(0)
+        elif abs(pidvalue) < 7:
+            #hard: slowest heating
+            servo2.changeAngle(22.5)
+        elif abs(pidvalue) < 10:
+            #soft: slower heating
+            servo2.less()
+        else:
+            #hard: fullpower
+            servo2.changeAngle(180)
 
 
-    servo2.changeAngle(0)
+
+    #servo2.changeAngle(0)
 
     #servo_pin = config.getint("Servo_1", "pin")
     #servo1 = sv.Servo(servo_pin)
