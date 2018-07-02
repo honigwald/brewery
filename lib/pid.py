@@ -18,22 +18,3 @@ class PID:
         self.last_error = error
 
         return PID
-
-'''
-p_fact = 1.0
-i_fact = -0.01
-i_total = 0.0
-d_fact = -5.0
-last_e = None
-while True:
-  e = t_set - read_temp()
-  if last_e is None:
-    last_e = e
-  i_total += e
-  if (e * p_fact + (e - last_e) * d_fact + i_total * i_fact) > 0.0:
-      heating_on(True)
-  else:
-      heating_on(False)
-  last_e = e
-  time.sleep(300.0)
-'''
