@@ -9,6 +9,8 @@ from time import sleep
 import time
 import timeit
 import ConfigParser
+import json
+import sys
 
 '''
 ++++++++++++++++++++++++++++++++++++++++++++++++
@@ -108,28 +110,35 @@ def control_heating(curr_temp):
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 '''
 if __name__ == '__main__':
-    print "Hello main function"
+    ### check parameter
+    if len(sys.argv) != 2:
+        print "Error: You've to specifie a recipy"
+        print "Usage: python brew.py <recipy>"
+        sys.exit()
+
     ### get current configuration
     config = ConfigParser.ConfigParser()
     config.readfp(open('config.ini'))
 
-    ### this array stores the values for each step given by recipe
-    ### STEP = [TARGET-TEMP, START-TIME, END-TIME, DURATION]
-    step = [0, 0, 0, 0]
-
     ### init list with used receipy
     ### following is still for testing purpose
     finished, brew = ls.List(), ls.List()
-    brew.append([50, -1, -1, -1])
-    brew.append([50, -1, -1, 60])
-    brew.append([60, -1, -1, -1])
-    brew.append([60, -1, -1, 100])
+    recipy = sys.argv[1]
+    with open(recipy) as f:
+        data = json.load(f)
+
+    for step in data['Step']:
+        brew.append([step['name'], step['id'], step['target_temp'], step['duration']])
+
     elem = brew.head
     step_counter = 0
+
+    brew.printList()
 
     ### get running mode
     mode = config.get("Modus", "mode")
 
+'''
     ### no brewing but testing
     if mode == "test":
         print "TEST-MODUS"
@@ -166,3 +175,4 @@ if __name__ == '__main__':
             brewing(elem)
             elem = elem.getNext()
             print ""
+'''

@@ -1,0 +1,23 @@
+{
+    "recipe":"Hefe",
+    "Step": [
+        {
+            "id": "1",
+            "name": "Einmaischen",
+            "target_temp": "60",
+            "duration": "-1"
+        },
+        {
+            "id": "2",
+            "name": "1.Rast",
+            "target_temp": "60",
+            "duration": "30"
+        },
+        {
+            "id": "3",
+            "name": "Aufheizen",
+            "target_temp": "70",
+            "duration": "-1"
+        }
+    ]
+}
