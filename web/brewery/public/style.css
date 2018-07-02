@@ -298,9 +298,11 @@ p {
 
 form input, form textarea, form select {
   outline: none;
-  border: 2px solid #3b3738;
+  /*border: none;2px solid #3b3738;*/
+  border-radius: 0px;
   padding: 10px;
-  background: #221f1f;
+  /*background: #221f1f;*/
+  background: linear-gradient(180deg, #fff0ac, #f5ca6e);
 }
 form input:hover, form input:focus, form textarea:hover, form textarea:focus, form select:hover, form select:focus {
   border-color: #f5ca6b;
@@ -309,6 +311,8 @@ form select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+
+
 }
 form textarea {
   resize: vertical;
@@ -1663,6 +1667,7 @@ form textarea {
   background: white;
   overflow: hidden;
   clear: both;
+  height: 100%;
 }
 
 .home-blocks {

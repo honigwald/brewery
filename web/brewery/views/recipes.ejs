@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>Beer | Contact</title>
+
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:100,300,400,700|" rel="stylesheet" type="text/css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/ie-support/html5.js"></script>
+    <script src="js/ie-support/respond.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+<div id="site-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 header-container">
+                <header class="site-header">
+                    <div id="branding">
+                        <img src="images/logo.png" alt="" class="logo">
+                        <div class="logo-text">
+                            <h1 class="site-title"><a href="index.html">Brewery</a></h1>
+                            <smal class="site-description">Durstig?</smal>
+                        </div>
+                    </div>
+                    <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+
+                    <div class="collapsible">
+                        <!-- Default snippet for navigation -->
+                        <div class="main-navigation">
+                            <ul class="menu">
+                                <li class="menu-item"><a href="index"><span class="icon-homepage"></span>Home</a></li>
+                                <li class="menu-item"><a href="recipes"><span class="icon-recipe"></span>Rezepte</a></li>
+                                <li class="menu-item"><a href="NewRecipe.html"><span class="icon-recipe"></span>Neues Rezept</a></li>
+                            </ul> <!-- .menu -->
+                        </div> <!-- .main-navigation -->
+
+                        <div class="social-links">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </div>
+                    </div>
+
+                </header>
+            </div>
+            <div class="col-md-10">
+                <main class="main-content">
+                    <div class="page">
+                        <h1 class="entry-title">Rezepte</h1>
+                        <div class="entry-content">
+                            <br>
+                                <% for (var i = 0; i < files.length; i++) { %>
+                                <li> <a style="color: #5b5952" href="/recipe?name=<%= files[i] %>"><%= files[i] %></a> </li></br>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</body>
+<footer>
+
+</footer>
+</html>
+
+

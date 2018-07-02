@@ -1,0 +1,1 @@
+{"recipeName":"Hefe","schritt1Name":"Einmaischen","schritt1Temp":"60","schritt1Zeit":"1","schritt2Name":"Rast","schritt2Temp":"62","schritt2Zeit":"30","schritt3Name":"Rast","schritt3Temp":"72","schritt3Zeit":"30"}
