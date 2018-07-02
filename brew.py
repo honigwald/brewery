@@ -3,7 +3,7 @@ import lib.Thermosensor as ts
 import lib.Timer as ti
 import lib.Servo as sv
 import lib.rf433 as rf
-import lib.pid as pid
+import lib.Pid as pid
 
 from time import sleep
 import time
