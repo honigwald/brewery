@@ -60,13 +60,6 @@
 							<div class="page">
 								<h1 class="entry-title">Erstelle ein neues Rezept</h1>
 								<div class="entry-content">
-									<!--div class="contact-details">
-										<span>Company name. INC</span>
-										<address>423 Avenue Street, Detroit</address>
-										<a href="(324) 913 895 293">(324) 913 895 293</a>
-										<a href="mailto:contact@companyname.com">contact@companyname.com</a>
-									</div-->
-
 									<div class="row">
 										<div class="col-md-6">
 												<form method="post" action="/addRecipe" id="recipeForm" name="recipeForm" class="contact-form">
@@ -74,36 +67,32 @@
 													<input id="recipeName" name="recipeName" type="text" placeholder="Rezeptname...">
 													</br>
 													<label>Schritt 1</label>
+														<input type="radio" id="aufheißen1"> <label for="aufheißen1">Aufheißen</label>
+														<input type="radio" id="rast1"> <label for="rast1">Rast</label>
+
 													<input id="schritt1Name" name="schritt1Name" type="text" placeholder="Name...">
 													<input id="schritt1Temp" name="schritt1Temp" type="number" placeholder="Temperatur in °C...">
 													<input id="schritt1Zeit" name="schritt1Zeit" type="number" placeholder="Zeit in min...">
 													</br>
-													<label>Schritt 2</label>
-													<input id="schritt2Name" name="schritt2Name" type="text" placeholder="Name...">
-													<input id="schritt2Temp" name="schritt2Temp" type="number" placeholder="Temperatur in °C...">
-													<input id="schritt2Zeit" name="schritt2Zeit" type="number" placeholder="Zeit in min...">
-													</br>
 													</fieldset>
-
 													<p class="text-right"><button class="add_form_field" style="border-right: #1d191a">Schritt hinzufügen</Button> <input id="saveRecipe" type="submit" value="Speichern"></p>
 												</form>
 											</div>
 										</div>
 									</div>
 								</div>
-							</div>
-						</main>
-
+							</main>
+						</div>
 						<footer class="site-footer"><div class="newsletter">
 							<form action="#">
 								<p></p>
 							</form>
-						</div></footer>
+						</div>
+						</footer>
 					</div>
 				</div>
 			</div>
 		</div>
-
 
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/plugins.js"></script>

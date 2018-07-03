@@ -60,7 +60,7 @@ app.post('/addRecipe', function(req, res) {
 
 
     var jsonObj2 = JSON.stringify(req.body);
-    fs.writeFile("recipes/" + req.body.recipeName + ".txt", jsonObj2 , function(err) {
+    fs.writeFile("recipes/" + req.body.recipeName , jsonObj2 , function(err) {
         if(err) {
             res.send(err);
         }
