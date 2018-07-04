@@ -74,7 +74,7 @@ app.post('/addRecipe', function(req, res) {
 app.post('/start', function(req, res) {
 
         var exec = require('child_process').exec;
-        exec('python brew.pyv ' + req.body.selectRecipe);
+        exec('python ../brew.py ' + req.body.selectRecipe);
 
         res.redirect('/index');
 });

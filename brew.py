@@ -11,6 +11,11 @@ import timeit
 import ConfigParser
 import json
 import sys
+import os
+
+os.chdir("/home/pi/brewery")
+PATHTORECIPES="web/recipes/"
+
 
 '''
 ++++++++++++++++++++++++++++++++++++++++++++++++
@@ -50,30 +55,49 @@ def testing(Node):
 ### BREWING MODE: Activate in config file. 
 ### the magic happens here in production mode
 def brewing(Node):
-    target_temp = Node.getData()[0]
+    target_temp = int(Node.getData()[2])
     t_start = time.ctime()
-    t_end = Node.getData()[2]
-    duration = Node.getData()[3]
+    t_end = int(Node.getData()[2])
+    duration = int(Node.getData()[3])
     curr_temp = s1.getTemprature()
     mypid.target_temp = target_temp
+
 
     if duration == -1:
         ### heat up
         print "Heating up: Start"
+        log = open(LOGFILE, "a")
+        log.write("======================\n")
+        log.write(" Heating up: Start\n")
+        log.write("----------------------\n")
+        log.close
+
         sleep(1)
         while curr_temp < target_temp:
             print "Heating Up: [%iC / %iC]" % (curr_temp, target_temp)
             print "----------------------------"
             print ""
+            log = open(LOGFILE, "a")
+            log.write("> Heating Up: [%iC / %iC]\n" % (curr_temp, target_temp))
+            log.close
             control_heating(curr_temp)
             sleep(1)
             curr_temp = s1.getTemprature()
 
         print "Heating up: Finished"
+        log = open(LOGFILE, "a")
+        log.write("----------------------\n")
+        log.write(" Heating up: Finished\n")
+        log.write("======================\n\n")
         sleep(1)
     else:
         ### hold temprature
         print "Hold Temprature: Start"
+        log = open(LOGFILE, "a")
+        log.write("===========================\n")
+        log.write(" Hold Temprature: Start\n")
+        log.write("---------------------------\n")
+        log.close
         sleep(1)
         timer = ti.Timer()
         timer.start(duration)
@@ -82,11 +106,22 @@ def brewing(Node):
             print "Hold Temprature: [%is / %is]" % (timer.getRuntime(), duration)
             print "----------------------------"
             print ""
+            log = open(LOGFILE, "a")
+            log.write("> Hold Temprature: [%iC / %iC]\n" % (curr_temp, target_temp))
+            log.write("> Hold Temprature: [%is / %is]\n" % (timer.getRuntime(), duration))
+            log.close
+
             control_heating(curr_temp)
             timer.tick()
             curr_temp = s1.getTemprature()
         print "Hold Temprature: Finished"
+        log = open(LOGFILE, "a")
+        log.write("---------------------------\n")
+        log.write(" Hold Temprature: Finished\n")
+        log.write("===========================\n\n")
+        log.close
     servo1.changeAngle(0)
+    sleep(2)
 
 def control_heating(curr_temp):
     pidvalue = mypid.update(curr_temp)
@@ -116,6 +151,9 @@ if __name__ == '__main__':
         print "Usage: python brew.py <recipy>"
         sys.exit()
 
+    recipy = PATHTORECIPES + sys.argv[1]
+    LOGFILE="log/" + time.strftime("%Y%m%d") + "_" + "dummy" + ".txt"
+
     ### get current configuration
     config = ConfigParser.ConfigParser()
     config.readfp(open('config.ini'))
@@ -123,7 +161,6 @@ if __name__ == '__main__':
     ### init list with used receipy
     ### following is still for testing purpose
     finished, brew = ls.List(), ls.List()
-    recipy = sys.argv[1]
     with open(recipy) as f:
         data = json.load(f)
 
@@ -138,7 +175,6 @@ if __name__ == '__main__':
     ### get running mode
     mode = config.get("Modus", "mode")
 
-'''
     ### no brewing but testing
     if mode == "test":
         print "TEST-MODUS"
@@ -168,6 +204,7 @@ if __name__ == '__main__':
         ### init rf433 jack
         #rf = rf.Rf433()
 
+        log = open(LOGFILE, "a")
         ### start process
         while elem != None:
             step_counter = step_counter + 1
@@ -175,4 +212,4 @@ if __name__ == '__main__':
             brewing(elem)
             elem = elem.getNext()
             print ""
-'''
+        log.close()

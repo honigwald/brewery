@@ -31,8 +31,8 @@ class Timer:
             if self.runtime > self.duration:
                 self.stop()
                 print "Timer finished!"
-            else:
-                print "Error: Timer isn't running"
+        else:
+            print "Error: Timer isn't running"
         time.sleep(1)
 
     def isRunning(self):

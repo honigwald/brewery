@@ -4,14 +4,14 @@
         {
             "id": "1",
             "name": "Einmaischen",
-            "target_temp": "60",
+            "target_temp": "25",
             "duration": "-1"
         },
         {
             "id": "2",
             "name": "1.Rast",
-            "target_temp": "60",
-            "duration": "30"
+            "target_temp": "35",
+            "duration": "10"
         },
         {
             "id": "3",
