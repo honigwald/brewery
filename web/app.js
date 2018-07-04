@@ -47,7 +47,6 @@ app.get('/recipes', function (req, res) {
 
 //detail recipes
 app.get('/recipe', function (req, res) {
-    console.log(req.query.name);
     var contents = fs.readFileSync('recipes/' + req.query.name);
     var jsonContent = JSON.parse(contents);
     res.render('recipe', {data : jsonContent});
@@ -69,6 +68,15 @@ app.post('/addRecipe', function(req, res) {
         }
         console.log("The file was saved!");
     });
+});
+
+//start Brewery
+app.post('/start', function(req, res) {
+
+        var exec = require('child_process').exec;
+        exec('python brew.pyv ' + req.body.selectRecipe);
+
+        res.redirect('/index');
 });
 
 

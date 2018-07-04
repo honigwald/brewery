@@ -65,9 +65,9 @@
                                 <small class="section-subtitle">Bier brauen auf knopfdruck!</small>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <form method="get" id="recipeForm" name="recipeForm" class="index-form">
+                                        <form method="post" action="/start" id="recipeForm" name="recipeForm" class="index-form">
 
-                                        <select>
+                                            <p class="text-left"><select id="selectRecipe" name="selectRecipe" style="margin-right: 5px">
                                             <option selected disabled>Select...</option>
 
                                             <% for (var i = 0; i < files.length; i++) {%>
@@ -75,9 +75,7 @@
                                             <option value="<%=files[i]%>"><%= files[i] %></option>
                                             <% } %>
 
-                                        </select>
-                                            <br/>
-                                        <p class="text-left"><button class="start_brew">Brauvorgang starten!</Button></p>
+                                        </select><input id="startBrewery" type="submit" value="Starte Brauvorgang"></p>
                                         </form>
                                     </div>
                                 </div>
