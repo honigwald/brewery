@@ -14,7 +14,7 @@ class List:
             current = self.head
             while current.next != None:
                 current = current.getNext();
-                current.setNext(new)
+            current.setNext(new)
 
     def printList(self):
         current = self.head

@@ -1,0 +1,1 @@
+{"recipeName":"Märzen","schritt1Name":"aufheizen","schritt1Temp":"20","schritt1Zeit":"","schritt2Name":"temp halten","schritt2Temp":"20","schritt2Zeit":"20","schritt3Name":"","schritt3Temp":"","schritt3Zeit":""}
