@@ -60,12 +60,14 @@ def brewing(Node):
     t_end = int(Node.getData()[2])
     duration = int(Node.getData()[3])
     curr_temp = s1.getTemprature()
-    mypid.target_temp = target_temp
 
 
     if duration == -1:
         ### heat up
-        print "Heating up: Start"
+        mypid.target_temp = target_temp
+        print("======================")
+        print " Heating up: Start"
+        print("----------------------")
         log = open(LOGFILE, "a")
         log.write("======================\n")
         log.write(" Heating up: Start\n")
@@ -74,17 +76,18 @@ def brewing(Node):
 
         sleep(1)
         while curr_temp < target_temp:
-            print "Heating Up: [%iC / %iC]" % (curr_temp, target_temp)
-            print "----------------------------"
-            print ""
+            print "> Heating Up: [%iC / %iC]" % (curr_temp, target_temp)
             log = open(LOGFILE, "a")
             log.write("> Heating Up: [%iC / %iC]\n" % (curr_temp, target_temp))
             log.close
-            control_heating(curr_temp)
+            control_heating(curr_temp, target_temp)
             sleep(1)
             curr_temp = s1.getTemprature()
 
-        print "Heating up: Finished"
+        print("----------------------\n")
+        print(" Heating up: Finished\n")
+        print("======================\n\n")
+
         log = open(LOGFILE, "a")
         log.write("----------------------\n")
         log.write(" Heating up: Finished\n")
@@ -92,6 +95,7 @@ def brewing(Node):
         sleep(1)
     else:
         ### hold temprature
+        mypid.target_temp = target_temp
         print "Hold Temprature: Start"
         log = open(LOGFILE, "a")
         log.write("===========================\n")
@@ -102,42 +106,47 @@ def brewing(Node):
         timer = ti.Timer()
         timer.start(duration)
         while timer.isRunning():
-            print "Hold Temprature: [%iC / %iC]" % (curr_temp, target_temp)
-            print "Hold Temprature: [%is / %is]" % (timer.getRuntime(), duration)
-            print "----------------------------"
-            print ""
+            print "> Hold Temprature (%is / %is): [%iC / %iC]" % (timer.getRuntime(), duration, curr_temp, target_temp)
             log = open(LOGFILE, "a")
-            log.write("> Hold Temprature: [%iC / %iC]\n" % (curr_temp, target_temp))
-            log.write("> Hold Temprature: [%is / %is]\n" % (timer.getRuntime(), duration))
+            log.write("> Hold Temprature (%is / %is): [%iC / %iC]\n" % (timer.getRuntime(), duration, curr_temp, target_temp))
+            #log.write("> Hold Temprature: [%is / %is]\n" % ())
             log.close
 
-            control_heating(curr_temp)
+            #if curr_temp < target_temp: 
+            control_heating(curr_temp, target_temp)
             timer.tick()
             curr_temp = s1.getTemprature()
-        print "Hold Temprature: Finished"
+        print("---------------------------\n")
+        print(" Hold Temprature: Finished\n")
+        print("===========================\n\n")
         log = open(LOGFILE, "a")
         log.write("---------------------------\n")
         log.write(" Hold Temprature: Finished\n")
         log.write("===========================\n\n")
         log.close
     servo1.changeAngle(0)
-    sleep(2)
 
-def control_heating(curr_temp):
+def control_heating(curr_temp, target_temp):
     pidvalue = mypid.update(curr_temp)
-    print ("PID: Current = %s\t Target = %s\t Value = %s") % (curr_temp, mypid.target_temp, pidvalue)
-    if abs(pidvalue) < 5:
+    print ("> PID: Current = %s\t Target = %s\t Value = %s") % (curr_temp, mypid.target_temp, pidvalue)
+    log.write("> PID: Current = %s\t Target = %s\t Value = %s\n" % (curr_temp, mypid.target_temp, pidvalue))
+
+    if target_temp < 40:
+        threshold = 1000
+    elif target_temp < 55:
+        threshold = 800
+    elif target_temp < 65:
+        threshold = 600
+    else:
+        threshold = 400
+
+    if pidvalue < threshold:
         # absolute: stopheating
         servo1.changeAngle(0)
-    elif abs(pidvalue) < 7:
-        # absolute: slowest heating
-        servo1.changeAngle(22.5)
-    elif abs(pidvalue) < 10:
-        # relative: slower heating
-        servo1.less()
     else:
         # absolute: fullpower
         servo1.changeAngle(180)
+    sleep(5)
 
 '''
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -171,6 +180,7 @@ if __name__ == '__main__':
     step_counter = 0
 
     brew.printList()
+    print ""
 
     ### get running mode
     mode = config.get("Modus", "mode")

@@ -4,20 +4,38 @@
         {
             "id": "1",
             "name": "Einmaischen",
-            "target_temp": "25",
+            "target_temp": "38",
             "duration": "-1"
         },
         {
             "id": "2",
             "name": "1.Rast",
-            "target_temp": "35",
-            "duration": "10"
+            "target_temp": "38",
+            "duration": "100"
         },
         {
             "id": "3",
             "name": "Aufheizen",
-            "target_temp": "70",
+            "target_temp": "52",
             "duration": "-1"
+        },
+        {
+            "id": "4",
+            "name": "2.Rast",
+            "target_temp": "52",
+            "duration": "100"
+        },
+        {
+            "id": "4",
+            "name": "Aufheizen",
+            "target_temp": "78",
+            "duration": "-1"
+        },
+        {
+            "id": "5",
+            "name": "3.Rast",
+            "target_temp": "78",
+            "duration": "100"
         }
     ]
 }

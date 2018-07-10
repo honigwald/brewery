@@ -30,3 +30,10 @@ class Thermosensor:
 
     def printStatistic(self):
         print "Sensor ID: %i\t Temprature: %i" % (self.id, self.value) 
+
+
+if __name__ == '__main__':
+    s1_id = 1
+    s1_path = "/sys/bus/w1/devices/28-02150317c1ff/w1_slave"
+    s1 = Thermosensor(s1_id, s1_path)
+    print s1.getTemprature()
