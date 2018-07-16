@@ -63,16 +63,18 @@
 							<div class="row">
 								<div class="col-md-6">
 									<form method="post" action="/addRecipe" id="recipeForm" name="recipeForm" class="contact-form">
-										<fieldset class="container123" style="border: none ">
+										<fieldset id="container123" class="container123" style="border: none ">
 											<input id="recipeName" name="recipeName" type="text" placeholder="Rezeptname...">
 											</br>
 											<label>Schritt 1</label>
-											<input id="schritt1Name" name="schritt1Name" type="text" placeholder="Name...">
-											<input id="schritt1Temp" name="schritt1Temp" type="number" placeholder="Temperatur in °C...">
-											<input id="schritt1Zeit" name="schritt1Zeit" type="number" placeholder="Zeit in min...">
+											<input type="hidden" id="schritt0Id" name="schritt0Id" value="0">
+											<input id="schritt0Name" name="schritt0Name" type="text" placeholder="Name...">
+											<input id="schritt0Temp" name="schritt0Temp" type="number" placeholder="Temperatur in °C...">
+											<input id="schritt0Zeit" name="schritt0Zeit" type="number" placeholder="Zeit in min...">
+
 											</br>
 										</fieldset>
-										<p class="text-right"><button class="add_form_field" style="border-right: #1d191a">Schritt hinzufügen</Button> <input id="saveRecipe" type="submit" value="Speichern"></p>
+										<p class="text-right"><button class="add_form_field" style="border-right: #1d191a">Schritt hinzufügen</Button> <input type="submit" value="Speichern"> </p>
 									</form>
 								</div>
 							</div>
@@ -94,20 +96,23 @@
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/app.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 
 <script>
+
     $(document).ready(function() {
+
         var max_fields      = 10;
         var wrapper         = $(".container123");
         var add_button      = $(".add_form_field");
-        var x = 1;
+
+        var x = 0;
         $(add_button).click(function(e){
             e.preventDefault();
             if(x < max_fields){
                 x++;
                 $(wrapper).append('<div><label>Schritt </label> '+x+ ' \r\n' +
+					'<input type="hidden" id="schritt'+x+'Id" name="schritt'+x+'Id" value="'+x+'">'+
                     '<input id="schritt'+x+'Name" name="schritt'+x+'Name"+x type="text" placeholder="Name...">\r\n' +
                     '<input id="schritt'+x+'Temp" name="schritt'+x+'Temp"+x type="number" placeholder="Temperatur in °C...">\n' +
                     '<input id="schritt'+x+'Zeit" name="schritt'+x+'Zeit"+x type="number" placeholder="Zeit in min...">\n' +
@@ -118,10 +123,18 @@
                 alert('Chill mal, 10 Schritte sollten genug sein!')
             }
         });
+
+
+
         $(wrapper).on("click",".delete", function(e){
             e.preventDefault(); $(this).parent('div').remove(); x--;
-        })
+        });
+
+
+
     });
+
+
 </script>
 </body>
 <footer>

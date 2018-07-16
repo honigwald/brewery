@@ -38,7 +38,6 @@ app.get('/recipes', function (req, res) {
     fs.readdir('recipes/', (err, files) => {
         files.forEach(file => {
             recipeList.push(file)
-            console.log(file);
             });
         res.render('recipes', { files: recipeList });
     });
@@ -57,9 +56,34 @@ app.get('/recipe', function (req, res) {
 //create Recipe
 app.post('/addRecipe', function(req, res) {
 
+    var o = {
+        recipe:"",
+        Step:[]
+    };
+    var objObj = req.body;
 
-    var jsonObj2 = JSON.stringify(req.body);
-    fs.writeFile("recipes/" + req.body.recipeName , jsonObj2 , function(err) {
+    o.recipe = req.body.recipeName;
+        Object.keys(objObj).forEach(function(key) {
+            if(key.includes("Id")){
+                let s = objObj[key];
+
+                let sName = "schritt" + s+"Name";
+                let sTemp = "schritt" + s+"Temp";
+                let sZeit = "schritt" + s+"Zeit";
+                console.log(sName);
+                let obj = {
+                    id: s,
+                    name: objObj[sName],
+                    target_temp: objObj[sTemp],
+                    duration: objObj[sZeit]
+                };
+                o.Step.push(obj);
+                };
+
+
+        });
+
+    fs.writeFile("recipes/" + req.body.recipeName , JSON.stringify(o) , function(err) {
         if(err) {
             res.send(err);
         }
@@ -73,10 +97,10 @@ app.post('/addRecipe', function(req, res) {
 //start Brewery
 app.post('/start', function(req, res) {
 
-        var exec = require('child_process').exec;
-        exec('python ../brew.py ' + req.body.selectRecipe);
+    var exec = require('child_process').exec;
+    exec('python ../brew.py ' + req.body.selectRecipe);
 
-        res.redirect('/index');
+    res.redirect('/index');
 });
 
 
