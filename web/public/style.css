@@ -1981,3 +1981,8 @@ figure img {
   text-align: center;
   color: #524d4e;
 }
+
+.help-text{
+  font-size: 80%;
+  color: #999;
+}

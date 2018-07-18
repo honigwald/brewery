@@ -66,12 +66,12 @@
 										<fieldset id="container123" class="container123" style="border: none ">
 											<input id="recipeName" name="recipeName" type="text" placeholder="Rezeptname...">
 											</br>
-											<label>Schritt 1</label>
+											<label>Schritt</label>
 											<input type="hidden" id="schritt0Id" name="schritt0Id" value="0">
 											<input id="schritt0Name" name="schritt0Name" type="text" placeholder="Name...">
 											<input id="schritt0Temp" name="schritt0Temp" type="number" placeholder="Temperatur in °C...">
-											<input id="schritt0Zeit" name="schritt0Zeit" type="number" placeholder="Zeit in min...">
-
+											<input id="schritt0Zeit" name="schritt0Zeit" type="number"  placeholder="Zeit in min...">
+											<p class="help-text">Beim Aufwärmen ist der Wert für die Zeit -1</p>
 											</br>
 										</fieldset>
 										<p class="text-right"><button class="add_form_field" style="border-right: #1d191a">Schritt hinzufügen</Button> <input type="submit" value="Speichern"> </p>
@@ -102,6 +102,7 @@
 
     $(document).ready(function() {
 
+
         var max_fields      = 10;
         var wrapper         = $(".container123");
         var add_button      = $(".add_form_field");
@@ -111,17 +112,25 @@
             e.preventDefault();
             if(x < max_fields){
                 x++;
-                $(wrapper).append('<div><label>Schritt </label> '+x+ ' \r\n' +
+                $(wrapper).append('<div><label>Schritt </label> \r\n' +
 					'<input type="hidden" id="schritt'+x+'Id" name="schritt'+x+'Id" value="'+x+'">'+
                     '<input id="schritt'+x+'Name" name="schritt'+x+'Name"+x type="text" placeholder="Name...">\r\n' +
                     '<input id="schritt'+x+'Temp" name="schritt'+x+'Temp"+x type="number" placeholder="Temperatur in °C...">\n' +
                     '<input id="schritt'+x+'Zeit" name="schritt'+x+'Zeit"+x type="number" placeholder="Zeit in min...">\n' +
+						'<p class="help-text">Beim Aufwärmen ist der Wert für die Zeit -1</p>\n' +
                     '<a href="#" class="delete">Delete</a></br></br></div>'); //add input boxes
             }
             else
             {
                 alert('Chill mal, 10 Schritte sollten genug sein!')
             }
+        });
+
+
+        $('#schritt1Zeit').bind('input', function() {
+
+            document.getElementById("mytext").value = "My value";
+            $(this).next().stop(true, true).fadeIn(0).html('[input event fired!]: ' + $(this).val()).fadeOut(2000);
         });
 
 

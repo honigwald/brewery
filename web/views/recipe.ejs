@@ -63,20 +63,19 @@
                             <!--maincontent-->
                             <h1><%= data.recipe %> </h1>
                             <ol>
-                                <% for (var key in data) {
-                                    if (data.hasOwnProperty(key) && key != 'recipe'){
-                                        if(key == 'Step'){
-                                        if(key.includes('name')){
-                                %><li> <b><%= key %> </b> </li></br><%}
-                                        if(key.includes('temp')){
-                                %><ul  style="list-style-position: inside;">
-                                    <li> <b>Temperatur:</b> <%= data[key]%> °C </li></ul></br><%}
-                                        if(key.includes('duration')){
-                                %><ul  style="list-style-position: inside;">
-                                    <li> <b>Dauer:</b> <%= data[key]%> min. </li>
-                                </ul></br><%}%>
+                                <% let a = data['Step'];
+                                for (let i = 0; i < a.length; i++) {
 
-                                <%  }}} %>
+                                %><li> <b><%= a[i].name %> </b> </li></br><%
+
+                                %><ul  style="list-style-position: inside;">
+                                    <li> <b>Temperatur:</b> <%= a[i].target_temp%> °C </li></ul></br><%
+
+                                %><ul  style="list-style-position: inside;">
+                                    <li> <b>Dauer:</b> <%= a[i].duration%> min. </li>
+                                </ul></br>
+
+                                <%  } %>
                             </ol>
                         </div>
                     </div>

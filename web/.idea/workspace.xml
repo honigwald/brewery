@@ -19,7 +19,7 @@
           <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="630">
+                <state relative-caret-position="15">
                   <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
                 </state>
               </provider>
@@ -28,8 +28,8 @@
           <file leaf-file-name="index.ejs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/index.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1725">
-                  <caret line="115" column="32" selection-start-line="94" selection-start-column="30" selection-end-line="115" selection-end-column="32" />
+                <state relative-caret-position="200">
+                  <caret line="69" column="136" selection-start-line="69" selection-start-column="136" selection-end-line="69" selection-end-column="136" />
                 </state>
               </provider>
             </entry>
@@ -37,8 +37,26 @@
           <file leaf-file-name="recipe.ejs" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/recipe.ejs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+                <state relative-caret-position="355">
+                  <caret line="74" column="79" selection-start-line="74" selection-start-column="79" selection-end-line="74" selection-end-column="79" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="recipes.ejs" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/views/recipes.ejs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-16">
+                  <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="dummy.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/recipes/dummy.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="435">
+                  <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
                 </state>
               </provider>
             </entry>
@@ -46,13 +64,22 @@
           <file leaf-file-name="NewRecipe.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/NewRecipe.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="209">
-                  <caret line="101" selection-start-line="101" selection-end-line="101" />
+                <state relative-caret-position="257">
+                  <caret line="72" column="104" selection-start-line="72" selection-start-column="104" selection-end-line="72" selection-end-column="104" />
                   <folding>
                     <element signature="n#style#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#button#0;n#p#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#div#0;n#footer#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/public/style.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="404">
+                  <caret line="1986" column="14" selection-start-line="1986" selection-start-column="14" selection-end-line="1986" selection-end-column="14" />
                 </state>
               </provider>
             </entry>
@@ -64,17 +91,8 @@
           <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1137">
-                  <caret line="100" column="55" lean-forward="true" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="55" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="test" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/recipes/test">
-              <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="2" selection-end-column="154" />
+                <state relative-caret-position="356">
+                  <caret line="103" column="3" lean-forward="true" selection-start-line="103" selection-start-column="3" selection-end-line="103" selection-end-column="3" />
                 </state>
               </provider>
             </entry>
@@ -124,13 +142,13 @@
         <option value="$PROJECT_DIR$/public/about.html" />
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/bin/www" />
-        <option value="$PROJECT_DIR$/public/style.css" />
-        <option value="$PROJECT_DIR$/views/index.ejs" />
         <option value="$PROJECT_DIR$/views/recipes.ejs" />
-        <option value="$PROJECT_DIR$/public/NewRecipe.html" />
-        <option value="$PROJECT_DIR$/public/NewRecipe.html" />
         <option value="$PROJECT_DIR$/views/recipe.ejs" />
         <option value="$PROJECT_DIR$/app.js" />
+        <option value="$PROJECT_DIR$/views/index.ejs" />
+        <option value="$PROJECT_DIR$/public/style.css" />
+        <option value="$PROJECT_DIR$/public/NewRecipe.html" />
+        <option value="$PROJECT_DIR$/public/NewRecipe.html" />
       </list>
     </option>
   </component>
@@ -166,9 +184,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="y" value="25" />
     <option name="width" value="1680" />
-    <option name="height" value="947" />
+    <option name="height" value="945" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -266,22 +284,23 @@
       <workItem from="1531394860883" duration="13605000" />
       <workItem from="1531470326053" duration="11437000" />
       <workItem from="1531642331392" duration="20570000" />
-      <workItem from="1531685994480" duration="2860000" />
+      <workItem from="1531685994480" duration="13026000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210933000" />
+    <option name="totallyTimeSpent" value="221099000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="947" extended-state="0" />
+    <frame x="0" y="25" width="1680" height="945" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8491228" visible="true" weight="0.12738095" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8491228" visible="true" weight="0.12738095" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34707904" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.347876" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Structure" order="1" sideWeight="0.1508772" side_tool="true" weight="0.12738095" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3298969" />
@@ -299,15 +318,15 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info id="npm" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34707904" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8491228" visible="true" weight="0.12738095" />
       <window_info id="Structure" order="1" sideWeight="0.1508772" side_tool="true" weight="0.12738095" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.347876" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298969" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3298969" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -328,31 +347,16 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/recipes/Weizen2" />
     <entry file="file://$PROJECT_DIR$/recipes/trdt" />
     <entry file="file://$PROJECT_DIR$/recipes/tree" />
     <entry file="file://$PROJECT_DIR$/recipes/hallo" />
     <entry file="file://$PROJECT_DIR$/recipes/testForm2" />
-    <entry file="file://$PROJECT_DIR$/public/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="1983" selection-start-line="1983" selection-end-line="1983" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recipes/test1212" />
     <entry file="file://$PROJECT_DIR$/recipes/test123" />
     <entry file="file://$PROJECT_DIR$/recipes/schrittzähler" />
     <entry file="file://$PROJECT_DIR$/recipes/helo" />
     <entry file="file://$PROJECT_DIR$/recipes/schritte" />
     <entry file="file://$PROJECT_DIR$/recipes/tree1" />
-    <entry file="file://$PROJECT_DIR$/views/recipes.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recipes/test1234" />
     <entry file="file://$PROJECT_DIR$/recipes/b" />
     <entry file="file://$PROJECT_DIR$/recipes/final" />
@@ -391,20 +395,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recipes/undefined" />
     <entry file="file://$PROJECT_DIR$/recipes/tach" />
-    <entry file="file://$PROJECT_DIR$/recipes/Hefe">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/index.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="115" column="32" selection-start-line="94" selection-start-column="30" selection-end-line="115" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/recipes/test">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -412,24 +402,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/recipes/Hefe">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+        <state>
+          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recipes/dummy.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="4" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/recipe.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+        <state relative-caret-position="355">
+          <caret line="74" column="79" selection-start-line="74" selection-start-column="79" selection-end-line="74" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/recipes.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="33" column="65" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="42" column="4" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/index.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="69" column="136" selection-start-line="69" selection-start-column="136" selection-end-line="69" selection-end-column="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="1986" column="14" selection-start-line="1986" selection-start-column="14" selection-end-line="1986" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/NewRecipe.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="257">
+          <caret line="72" column="104" selection-start-line="72" selection-start-column="104" selection-end-line="72" selection-end-column="104" />
           <folding>
             <element signature="n#style#0;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#p#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />

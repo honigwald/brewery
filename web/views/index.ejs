@@ -75,7 +75,7 @@
                                             <option value="<%=files[i]%>"><%= files[i] %></option>
                                             <% } %>
 
-                                        </select><input id="startBrewery" type="submit" value="Starte Brauvorgang"></p>
+                                        </select><input id="startBrewery" type="submit" value="Starte Brauvorgang" onclick="alert('Brauvorgang wurde gestartet!')"></p>
                                         </form>
                                     </div>
                                 </div>
@@ -130,6 +130,8 @@
 
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script type="text/javascript">
+
+
 
     window.onload = function () {
         var chart = new CanvasJS.Chart("chartContainer", {
