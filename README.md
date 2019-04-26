@@ -15,4 +15,5 @@ Following dependencies are required to run the program:
 To get the sourcecode you've to clone this git-project. 
 
 ## Usage
-For startup of the webserver navigate into the web directory and run `npm start`
+To run the webserver you've to navigate into the web directory and run `npm start`
+The webinterface is accessible through your prefered webbrowser over the URL: `http://localhost:4000`
