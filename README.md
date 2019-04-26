@@ -1,4 +1,4 @@
-# Prozess- und Anlagenautomatisierung einer Microbrauanlage
+# MAKE BEER GREAT AGAIN (MBGA)
 ## Description
 This Project was started in context of the module "Prozess- und Anlagenautomatisierung einer Microbrauanlage" of TU Berlin.
 Goal of it is to control and supervise the mashing process in beer production. The used platform is an RPI 3 with some extra Hardware (e.g. Thermosensor, Servomotor, IR-Socket).
