@@ -1,0 +1,53 @@
+#################################################################################
+# Description: 	To connect to the RPI we'll provide an own Wifi-Network		#
+#		This documentation is an HowTo for configuring this Network 	#
+#		for our purposes.						#
+#										#
+# Hardware:	Wifi-Dongle WL0084B						#
+#										#
+# Software:	dnsmasq								#
+#		hastapd								#
+#################################################################################
+
+1. Install required software with following commands:
+	> sudo apt-get install dnsmasq hostapd
+
+2. Stop systemservices:
+	> sudo systemctl stop dnsmasq
+	> sudo systemctl stop hostapd
+
+3. Configure static IP-Address for AP:
+	> vi /etc/dhcpcd.conf
+		* insert following line (for specific Wifi-Interface)
+			>> interface wlan0
+			   static ip_address=192.168.4.1/24
+	> restart dhcpcd
+		* sudo service dhcpcd restart
+
+4. Configure DHCP Server:
+	> Edit or create DHCPD config file
+		* vi /etc/dnsmasq.conf
+			>> inteface=wlan1
+			   usually wlan1
+			   dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
+
+5. Configure Access-Point:
+	> Edit or create HOSTAPD config file
+		* vi /etc/hostapd/hostapd.conf
+			>>	interface=wlan1
+				driver=nl80211
+				ssid=NameOfNetwork
+				hw_mode=g
+				channel=7
+				wmm_enabled=0
+				macaddr_acl=0
+				auth_algs=1
+				ignore_broadcast_ssid=0
+				wpa=2
+				wpa_passphrase=AardvarkBadgerHedgehog
+				wpa_key_mgmt=WPA-PSK
+				wpa_pairwise=TKIP
+				rsn_pairwise=CCMP
+	> Tell the system where to find this configuration
+		* vi /etc/default/hostapd
+			>> DAEMON_CONF="/etc/hostapd/hostapd.conf"
