@@ -15,9 +15,9 @@ import json
 import sys
 import os
 
-os.chdir("/home/pi/brewery")
-PATHTORECIPES="web/recipes/"
-
+WORKDIR=os.path.dirname(os.path.realpath(__file__))
+os.chdir(WORKDIR)
+RECEPIES="web/recipes/"
 
 '''
 ++++++++++++++++++++++++++++++++++++++++++++++++
@@ -32,6 +32,7 @@ def testing(Node):
     servo_pin = config.getint("Servo_1", "pin")
     servo1 = Servo(servo_pin)
     servo1.changeAngle(180)
+    print "testing"
 
     while True:
         temp1 = s1.getTemprature()
@@ -162,7 +163,7 @@ if __name__ == '__main__':
         print "Usage: python brew.py <recipy>"
         sys.exit()
 
-    recipy = PATHTORECIPES + sys.argv[1]
+    recipy = RECEPIES + sys.argv[1]
     LOGFILE="log/" + time.strftime("%Y%m%d") + "_" + "dummy" + ".txt"
 
     ### get current configuration
