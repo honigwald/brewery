@@ -27,14 +27,14 @@
 4. Configure DHCP Server:
 	> Edit or create DHCPD config file
 		* vi /etc/dnsmasq.conf
-			>> inteface=wlan1
-			   usually wlan1
+			>> interface=wlan0
+			   usually wlan0
 			   dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
 
 5. Configure Access-Point:
 	> Edit or create HOSTAPD config file
 		* vi /etc/hostapd/hostapd.conf
-			>>	interface=wlan1
+			>>	interface=wlan0
 				driver=nl80211
 				ssid=NameOfNetwork
 				hw_mode=g
