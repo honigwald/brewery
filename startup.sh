@@ -1,15 +1,18 @@
 #!/bin/bash
 
 WORKDIR=$PWD
+LOGFILE=$WORKDIR/mbga/log/webserver.log
+
 if [ -f .run.lock ]; then
     echo "Server might be already running"
     exit 1
 fi
 if [ ! -f .run.lock ]; then
     echo "-> Starting"
+    echo "=============================================" >> $LOGFILE
+    echo "-> Start @ `date`" >> $LOGFILE
     cd mbga/web
-    npm start &> $WORKDIR/mbga/log/webserver.log &
-    #npm start &
+    npm start &>> $LOGFILE &
     sleep 2
     PID=`pgrep -P $!`
     echo $PID >> $WORKDIR/.run.lock
