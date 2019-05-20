@@ -18,11 +18,11 @@ class List:
 
     def printList(self):
         current = self.head
-        print "+-+-+-+-+-+-+-+"
-        print "| Linked List |"
-        print "+-+-+-+-+-+-+-+"
+        print("+-+-+-+-+-+-+-+")
+        print("| Linked List |")
+        print("+-+-+-+-+-+-+-+")
         while current != None:
-            print "ID: %s\t Data: %s\t Next: %s" % (current, current.getData(), current.next)
+            print("ID: %s\t Data: %s\t Next: %s" % (current, current.getData(), current.next))
             current = current.getNext()
 
     def getLength(self):

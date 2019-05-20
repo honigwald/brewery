@@ -19,9 +19,9 @@ class Tsensor:
                     self.value /= convertToDegree
                     break
                 except (IOError):
-                    print "IOError: File not found"
+                    print("IOError: File not found")
                 except (ValueError):
-                    print "ValueError: Expect integer"
+                    print("ValueError: Expect integer")
                 file.close()
                 nextTry = nextTry + 1
                 if nextTry < 3:
@@ -29,11 +29,11 @@ class Tsensor:
             return self.value
 
     def printStatistic(self):
-        print "Sensor ID: %i\t Temprature: %i" % (self.id, self.value) 
+        print("Sensor ID: %i\t Temprature: %i" % self.id, self.value)
 
 
 if __name__ == '__main__':
     s1_id = 1
     s1_path = "/sys/bus/w1/devices/28-02150317c1ff/w1_slave"
     s1 = Thermosensor(s1_id, s1_path)
-    print s1.getTemprature()
+    print(s1.getTemprature)

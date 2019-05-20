@@ -4,20 +4,19 @@ from mbga.lib.pid import PID
 
 from mbga.ext.tsensor import Tsensor
 from mbga.ext.servo import Servo
+from mbga.ext.rf433 import Rf433
 #import lib.rf433 as rf
 
 
 from time import sleep
-import time
-import timeit
-import ConfigParser
+import time, timeit
+import configparser
 import json
 import sys
 import os
 
 WORKDIR=os.path.dirname(os.path.realpath(__file__))
 os.chdir(WORKDIR)
-RECEPIES="web/recipes/"
 
 '''
 ++++++++++++++++++++++++++++++++++++++++++++++++
@@ -25,39 +24,57 @@ RECEPIES="web/recipes/"
 ++++++++++++++++++++++++++++++++++++++++++++++++
 '''
 ### TESTING MODE: Activate in config file
-def testing(Node):
-    print "TESTING MODE ACTIVATED"
-    mypid = PID(37.0)
+def test(Node, Sensor, Rfplug):
+    print("\nTEST MODE ACTIVATED")
+    print("-------------------")
+    print("Checking external devices...")
+    print("> Temprature: %s" % Sensor.getTemprature())
+    print("> RfSender: Plug on...")
+    Rfplug.on()
+    sleep(3)
+    print("> RfSender: Plug off...")
+    Rfplug.off()
 
-    servo_pin = config.getint("Servo_1", "pin")
-    servo1 = Servo(servo_pin)
-    servo1.changeAngle(180)
-    print "testing"
+    print("\nChecking linked-list...")
+    print("> Head: %s" % Node)
+    
+    print("\nEverything looks fine")
+    print("-------------------")
+    sleep(3)
 
-    while True:
-        temp1 = s1.getTemprature()
-        pidvalue = mypid.update(temp1)
-        print ("PID: Current = %s\t Target = %s\t Value = %s") % (temp1, mypid.target_temp, pidvalue)
-        sleep(2)
 
-        if abs(pidvalue) < 5:
-            # absolute: stopheating
-            servo1.changeAngle(0)
-        elif abs(pidvalue) < 7:
-            # absolute: slowest heating
-            servo1.changeAngle(22.5)
-        elif abs(pidvalue) < 10:
-            # relative: slower heating
-            servo1.less()
-        else:
-            # absolute: fullpower
-            servo1.changeAngle(180)
+
+#    mypid = PID(37.0)
+#
+#    servo_pin = config.getint("Servo_1", "pin")
+#    servo1 = Servo(servo_pin)
+#    servo1.changeAngle(180)
+#    print("testing")
+#
+#    while True:
+#        temp1 = s1.getTemprature()
+#        pidvalue = mypid.update(temp1)
+#        print("PID: Current = %s\t Target = %s\t Value = %s" % temp1, mypid.target_temp, pidvalue)
+#        sleep(2)
+#
+#        if abs(pidvalue) < 5:
+#            # absolute: stopheating
+#            servo1.changeAngle(0)
+#        elif abs(pidvalue) < 7:
+#            # absolute: slowest heating
+#            servo1.changeAngle(22.5)
+#        elif abs(pidvalue) < 10:
+#            # relative: slower heating
+#            servo1.less()
+#        else:
+#            # absolute: fullpower
+#            servo1.changeAngle(180)
 
 
 
 ### BREWING MODE: Activate in config file. 
 ### the magic happens here in production mode
-def brewing(Node):
+def brew(Node):
     target_temp = int(Node.getData()[2])
     t_start = time.ctime()
     t_end = int(Node.getData()[2])
@@ -69,7 +86,7 @@ def brewing(Node):
         ### heat up
         mypid.target_temp = target_temp
         print("======================")
-        print " Heating up: Start"
+        print(" Heating up: Start")
         print("----------------------")
         log = open(LOGFILE, "a")
         log.write("======================\n")
@@ -79,7 +96,7 @@ def brewing(Node):
 
         sleep(1)
         while curr_temp < target_temp:
-            print "> Heating Up: [%iC / %iC]" % (curr_temp, target_temp)
+            print("> Heating Up: [%iC / %iC]" % curr_temp, target_temp)
             log = open(LOGFILE, "a")
             log.write("> Heating Up: [%iC / %iC]\n" % (curr_temp, target_temp))
             log.close
@@ -99,7 +116,7 @@ def brewing(Node):
     else:
         ### hold temprature
         mypid.target_temp = target_temp
-        print "Hold Temprature: Start"
+        print("Hold Temprature: Start")
         log = open(LOGFILE, "a")
         log.write("===========================\n")
         log.write(" Hold Temprature: Start\n")
@@ -109,7 +126,7 @@ def brewing(Node):
         timer = Timer()
         timer.start(duration)
         while timer.isRunning():
-            print "> Hold Temprature (%is / %is): [%iC / %iC]" % (timer.getRuntime(), duration, curr_temp, target_temp)
+            print("> Hold Temprature (%is / %is): [%iC / %iC]" % timer.getRuntime(), duration, curr_temp, target_temp)
             log = open(LOGFILE, "a")
             log.write("> Hold Temprature (%is / %is): [%iC / %iC]\n" % (timer.getRuntime(), duration, curr_temp, target_temp))
             #log.write("> Hold Temprature: [%is / %is]\n" % ())
@@ -131,7 +148,7 @@ def brewing(Node):
 
 def control_heating(curr_temp, target_temp):
     pidvalue = mypid.update(curr_temp)
-    print ("> PID: Current = %s\t Target = %s\t Value = %s") % (curr_temp, mypid.target_temp, pidvalue)
+    print("> PID: Current = %s\t Target = %s\t Value = %s" % curr_temp, mypid.target_temp, pidvalue)
     log.write("> PID: Current = %s\t Target = %s\t Value = %s\n" % (curr_temp, mypid.target_temp, pidvalue))
 
     if target_temp < 40:
@@ -151,23 +168,24 @@ def control_heating(curr_temp, target_temp):
         servo1.changeAngle(180)
     sleep(5)
 
+
+
 '''
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 | Some needed configurations before starting |
 -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-'''
 if __name__ == '__main__':
     ### check parameter
     if len(sys.argv) != 2:
-        print "Error: You've to specifie a recipy"
-        print "Usage: python brew.py <recipy>"
+        print("Error: You've to specifie a recipy")
+        print("Usage: python brew.py <recipy>")
         sys.exit()
 
     recipy = RECEPIES + sys.argv[1]
     LOGFILE="log/" + time.strftime("%Y%m%d") + "_" + "dummy" + ".txt"
 
     ### get current configuration
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     config.readfp(open('config.ini'))
 
     ### init list with used receipy
@@ -183,14 +201,14 @@ if __name__ == '__main__':
     step_counter = 0
 
     brew.printList()
-    print ""
+    print("")
 
     ### get running mode
-    mode = config.get("Modus", "mode")
+    mode = config.get("Mode", "mode")
 
     ### no brewing but testing
     if mode == "test":
-        print "TEST-MODUS"
+        print("TEST-MODUS")
         s1_id = 1
         s1_path = config.get("Thermo_1", "path")
         s1 = Tsensor(s1_id, s1_path)
@@ -221,8 +239,9 @@ if __name__ == '__main__':
         ### start process
         while elem != None:
             step_counter = step_counter + 1
-            print "Step: %i\t Node: %s" % (step_counter, elem)
+            print("Step: %i\t Node: %s" % step_counter, elem)
             brewing(elem)
             elem = elem.getNext()
-            print ""
+            print("")
         log.close()
+'''

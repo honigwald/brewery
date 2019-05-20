@@ -15,7 +15,7 @@ class Timer:
             self.stime = timeit.default_timer()
             self.running = True
         else:
-            print "Usage: start(seconds)"
+            print("Usage: start(seconds)")
 
     def stop(self):
         self.etime = timeit.default_timer()
@@ -30,9 +30,9 @@ class Timer:
             self.runtime = timeit.default_timer() - self.stime
             if self.runtime > self.duration:
                 self.stop()
-                print "Timer finished!"
+                print("Timer finished!")
         else:
-            print "Error: Timer isn't running"
+            print("Error: Timer isn't running")
         time.sleep(1)
 
     def isRunning(self):

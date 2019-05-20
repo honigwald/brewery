@@ -48,20 +48,20 @@ class Servo:
             GPIO.output(self.PIN, True)
             self.pwm.ChangeDutyCycle(convertAngle.get(angle))
             self.angle = angle
-            print self.angle
+            print(self.angle)
             time.sleep(1)
             GPIO.output(self.PIN, False)
         self.pwm.ChangeDutyCycle(0)
 
     def more(self):
         if self.angle == 180:
-            print "more: we're at full power"
+            print("more: we're at full power")
             GPIO.output(self.PIN, False)
             self.pwm.ChangeDutyCycle(0)
             time.sleep(1)
         else:
-            print self.angle
-            print "Next angle is: %s" % (self.angle + 22.5)
+            print(self.angle)
+            print("Next angle is: %s" % (self.angle + 22.5))
             self.changeAngle(self.angle + 22.5)
             GPIO.output(self.PIN, False)
             self.pwm.ChangeDutyCycle(0)
@@ -69,15 +69,15 @@ class Servo:
 
     def less(self):
         if self.angle > 22.5:
-            print self.angle
-            print "Next angle is: %s" % (self.angle - 22.5)
+            print(self.angle)
+            print("Next angle is: %s" % (self.angle - 22.5))
             self.changeAngle(self.angle - 22.5)
             GPIO.output(self.PIN, False)
             self.pwm.ChangeDutyCycle(0)
             time.sleep(1)
         else:
-            print "less: can't go further"
-            print "Next angle is: %s" % (45)
+            print("less: can't go further")
+            print("Next angle is: %s" % (45))
             self.changeAngle(45)
             GPIO.output(self.PIN, False)
             self.pwm.ChangeDutyCycle(0)
