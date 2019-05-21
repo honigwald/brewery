@@ -1,29 +1,18 @@
-from mbga.lib.llist import List
-from mbga.lib.timer import Timer
-from mbga.lib.pid import PID
+from mbga.lib.llist     import List
+from mbga.lib.timer     import Timer
+from mbga.lib.pid       import PID
 
-from mbga.ext.tsensor import Tsensor
-from mbga.ext.servo import Servo
-from mbga.ext.rf433 import Rf433
-#import lib.rf433 as rf
+#from mbga.ext.tsensor   import Tsensor
+#from mbga.ext.servo     import Servo
+#from mbga.ext.rf433     import Rf433
 
-
-from time import sleep
-import time, timeit
-import configparser
-import json
-import sys
-import os
+from time import sleep, ctime
+import timeit, configparser, json, sys, os
 
 WORKDIR=os.path.dirname(os.path.realpath(__file__))
 os.chdir(WORKDIR)
 
-'''
-++++++++++++++++++++++++++++++++++++++++++++++++
-+++ Here following some function definitions +++
-++++++++++++++++++++++++++++++++++++++++++++++++
-'''
-### TESTING MODE: Activate in config file
+### TEST MODE: Activate in config file
 def test(Node, Sensor, Rfplug):
     print("\nTEST MODE ACTIVATED")
     print("-------------------")
@@ -42,206 +31,108 @@ def test(Node, Sensor, Rfplug):
     print("-------------------")
     sleep(3)
 
-
-
-#    mypid = PID(37.0)
-#
-#    servo_pin = config.getint("Servo_1", "pin")
-#    servo1 = Servo(servo_pin)
-#    servo1.changeAngle(180)
-#    print("testing")
-#
-#    while True:
-#        temp1 = s1.getTemprature()
-#        pidvalue = mypid.update(temp1)
-#        print("PID: Current = %s\t Target = %s\t Value = %s" % temp1, mypid.target_temp, pidvalue)
-#        sleep(2)
-#
-#        if abs(pidvalue) < 5:
-#            # absolute: stopheating
-#            servo1.changeAngle(0)
-#        elif abs(pidvalue) < 7:
-#            # absolute: slowest heating
-#            servo1.changeAngle(22.5)
-#        elif abs(pidvalue) < 10:
-#            # relative: slower heating
-#            servo1.less()
-#        else:
-#            # absolute: fullpower
-#            servo1.changeAngle(180)
-
-
+    mypid = PID(36.0)
+    while True:
+        temp = Sensor.getTemprature()
+        pidvalue = mypid.update(temp)
+        print("PID: Current = %s\t Target = %s\t Value = %s" % (temp, mypid.te_target, pidvalue))
+        if pidvalue < 50:
+            Rfplug.off()
+        else:
+            Rfplug.on()
+        sleep(2)
 
 ### BREWING MODE: Activate in config file. 
-### the magic happens here in production mode
-def brew(Node):
-    target_temp = int(Node.getData()[2])
-    t_start = time.ctime()
-    t_end = int(Node.getData()[2])
+### the magic happens here
+def brew(Node, tsensor, rfplug, log):
+    mypid = PID(None)
+    ti_start = ctime()
+    ti_end = int(Node.getData()[2])
     duration = int(Node.getData()[3])
-    curr_temp = s1.getTemprature()
-
+    te_target = int(Node.getData()[2])
+    te_current = tsensor.getTemprature()
 
     if duration == -1:
         ### heat up
-        mypid.target_temp = target_temp
+        mypid.te_target = te_target
         print("======================")
         print(" Heating up: Start")
         print("----------------------")
-        log = open(LOGFILE, "a")
+        #log = open(LOGFILE, "a")
         log.write("======================\n")
         log.write(" Heating up: Start\n")
         log.write("----------------------\n")
-        log.close
+        #log.close
 
         sleep(1)
-        while curr_temp < target_temp:
-            print("> Heating Up: [%iC / %iC]" % curr_temp, target_temp)
-            log = open(LOGFILE, "a")
-            log.write("> Heating Up: [%iC / %iC]\n" % (curr_temp, target_temp))
-            log.close
-            control_heating(curr_temp, target_temp)
+        while te_current < te_target:
+            print("> Heating Up: [%iC / %iC]" % (te_current, te_target))
+            #log = open(LOGFILE, "a")
+            log.write("> Heating Up: [%iC / %iC]\n" % (te_current, te_target))
+            #log.close
+            ctrl_heat(te_current, te_target, rfplug, mypid, log)
             sleep(1)
-            curr_temp = s1.getTemprature()
+            te_current = tsensor.getTemprature()
 
         print("----------------------\n")
         print(" Heating up: Finished\n")
         print("======================\n\n")
 
-        log = open(LOGFILE, "a")
+        #log = open(LOGFILE, "a")
         log.write("----------------------\n")
         log.write(" Heating up: Finished\n")
         log.write("======================\n\n")
         sleep(1)
     else:
         ### hold temprature
-        mypid.target_temp = target_temp
+        mypid.te_target = te_target
         print("Hold Temprature: Start")
-        log = open(LOGFILE, "a")
+        #log = open(LOGFILE, "a")
         log.write("===========================\n")
         log.write(" Hold Temprature: Start\n")
         log.write("---------------------------\n")
-        log.close
+        #log.close
         sleep(1)
         timer = Timer()
         timer.start(duration)
         while timer.isRunning():
-            print("> Hold Temprature (%is / %is): [%iC / %iC]" % timer.getRuntime(), duration, curr_temp, target_temp)
-            log = open(LOGFILE, "a")
-            log.write("> Hold Temprature (%is / %is): [%iC / %iC]\n" % (timer.getRuntime(), duration, curr_temp, target_temp))
-            #log.write("> Hold Temprature: [%is / %is]\n" % ())
-            log.close
+            print("> Hold Temprature (%is / %is): [%iC / %iC]" % timer.getRuntime(), duration, te_current, te_target)
+            #log = open(LOGFILE, "a")
+            log.write("> Hold Temprature (%is / %is): [%iC / %iC]\n" % (timer.getRuntime(), duration, te_current, te_target))
+            #log.close
 
-            #if curr_temp < target_temp: 
-            control_heating(curr_temp, target_temp)
+            ### if current < target then
+            ctrl_heat(te_current, te_target, log)
             timer.tick()
-            curr_temp = s1.getTemprature()
+            te_current = tsensor.getTemprature()
         print("---------------------------\n")
         print(" Hold Temprature: Finished\n")
         print("===========================\n\n")
-        log = open(LOGFILE, "a")
+        #log = open(LOGFILE, "a")
         log.write("---------------------------\n")
         log.write(" Hold Temprature: Finished\n")
         log.write("===========================\n\n")
-        log.close
-    servo1.changeAngle(0)
+        #log.close
+    rfplug.off()
 
-def control_heating(curr_temp, target_temp):
-    pidvalue = mypid.update(curr_temp)
-    print("> PID: Current = %s\t Target = %s\t Value = %s" % curr_temp, mypid.target_temp, pidvalue)
-    log.write("> PID: Current = %s\t Target = %s\t Value = %s\n" % (curr_temp, mypid.target_temp, pidvalue))
+def ctrl_heat(te_current, te_target, rfplug, pid, log):
+    pidvalue = pid.update(te_current)
+    print("> PID: Current = %s\t Target = %s\t Value = %s" % (te_current, pid.te_target, pidvalue))
+    log.write("> PID: Current = %s\t Target = %s\t Value = %s\n" % (te_current, pid.te_target, pidvalue))
 
-    if target_temp < 40:
+    if te_target < 40:
         threshold = 1000
-    elif target_temp < 55:
+    elif te_target < 55:
         threshold = 800
-    elif target_temp < 65:
+    elif te_target < 65:
         threshold = 600
     else:
         threshold = 400
 
     if pidvalue < threshold:
         # absolute: stopheating
-        servo1.changeAngle(0)
+        rfplug.off()
     else:
         # absolute: fullpower
-        servo1.changeAngle(180)
+        rfplug.on()
     sleep(5)
-
-
-
-'''
--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-| Some needed configurations before starting |
--+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-if __name__ == '__main__':
-    ### check parameter
-    if len(sys.argv) != 2:
-        print("Error: You've to specifie a recipy")
-        print("Usage: python brew.py <recipy>")
-        sys.exit()
-
-    recipy = RECEPIES + sys.argv[1]
-    LOGFILE="log/" + time.strftime("%Y%m%d") + "_" + "dummy" + ".txt"
-
-    ### get current configuration
-    config = configparser.ConfigParser()
-    config.readfp(open('config.ini'))
-
-    ### init list with used receipy
-    ### following is still for testing purpose
-    finished, brew = List(), List()
-    with open(recipy) as f:
-        data = json.load(f)
-
-    for step in data['Step']:
-        brew.append([step['name'], step['id'], step['target_temp'], step['duration']])
-
-    elem = brew.head
-    step_counter = 0
-
-    brew.printList()
-    print("")
-
-    ### get running mode
-    mode = config.get("Mode", "mode")
-
-    ### no brewing but testing
-    if mode == "test":
-        print("TEST-MODUS")
-        s1_id = 1
-        s1_path = config.get("Thermo_1", "path")
-        s1 = Tsensor(s1_id, s1_path)
-        testing(1)
-
-    ### time for brewing
-    else:
-        ### init thermosensor
-        s1_id = 1
-        s1_path = config.get("Thermo_1", "path")
-        s1 = Tsensor(s1_id, s1_path)
-        #s2 = ts.Sensor(2, SENSOR_2)
-        
-        ### init pid
-        mypid = PID(None)
-
-        ### init servo
-        servo_pin = config.getint("Servo_1", "pin")
-        servo1 = Servo(servo_pin)
-
-        #servo_pin = config.getint("Servo_2", "pin")
-        #servo2 = sv.Servo(servo_pin)
-
-        ### init rf433 jack
-        #rf = rf.Rf433()
-
-        log = open(LOGFILE, "a")
-        ### start process
-        while elem != None:
-            step_counter = step_counter + 1
-            print("Step: %i\t Node: %s" % step_counter, elem)
-            brewing(elem)
-            elem = elem.getNext()
-            print("")
-        log.close()
-'''

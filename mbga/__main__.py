@@ -1,7 +1,7 @@
-from mbga import mashing
-from mbga.lib.llist import List
-from mbga.ext.tsensor import Tsensor
-from mbga.ext.rf433 import Rf433
+from mbga               import mashing
+from mbga.lib.llist     import List
+from mbga.ext.tsensor   import Tsensor
+from mbga.ext.rf433     import Rf433
 
 import sys, time, configparser, json, os
 
@@ -46,42 +46,24 @@ if __name__ == '__main__':
     for item in items:
         code = item.replace('(','').replace(')','').split(',')
         rf_codes.append(list(map(int,code)))
-    rf1 = Rf433(0, rf_pin, rf_codes[0])
+    rf0 = Rf433(0, rf_pin, rf_codes[0])
+
+    ### init temprature sensor
+    ts_id = 0
+    ts_path = config.get("Thermo_1", "path")
+    ts0 = Tsensor(ts_id, ts_path)
 
     ### testmode
     if mode == "test":
-        s1_id = 1
-        s1_path = config.get("Thermo_1", "path")
-        s1 = Tsensor(s1_id, s1_path)
-        mashing.test(elem, s1, rf1)
+        mashing.test(elem, ts0, rf0)
 
     ### brewmode
     else:
-        ### init thermosensor
-        s1_id = 1
-        s1_path = config.get("Thermo_1", "path")
-        s1 = Tsensor(s1_id, s1_path)
-        #s2 = ts.Sensor(2, SENSOR_2)
-        
-        ### init pid
-        mypid = PID(None)
-
-        ### init servo
-        servo_pin = config.getint("Servo_1", "pin")
-        servo1 = Servo(servo_pin)
-
-        #servo_pin = config.getint("Servo_2", "pin")
-        #servo2 = sv.Servo(servo_pin)
-
-        ### init rf433 jack
-        #rf = rf.Rf433()
-
         log = open(logfile, "a")
-        ### start process
         while elem != None:
             step_counter = step_counter + 1
-            print("Step: %i\t Node: %s" % step_counter, elem)
-            brew(elem)
+            print("Step: %i\t Node: %s" % (step_counter, elem))
+            mashing.brew(elem, ts0, rf0, log)
             elem = elem.getNext()
             print("")
         log.close()

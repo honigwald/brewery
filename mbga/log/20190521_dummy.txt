@@ -1,0 +1,764 @@
+======================
+ Heating up: Start
+----------------------
+======================
+ Heating up: Start
+----------------------
+> Heating Up: [23C / 38C]
+======================
+ Heating up: Start
+----------------------
+> Heating Up: [23C / 38C]
+======================
+ Heating up: Start
+----------------------
+> Heating Up: [23C / 38C]
+======================
+ Heating up: Start
+----------------------
+> Heating Up: [23C / 38C]
+======================
+ Heating up: Start
+----------------------
+> Heating Up: [23C / 38C]
+======================
+ Heating up: Start
+----------------------
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 1469.3759873095703
+======================
+ Heating up: Start
+----------------------
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 1475.5978216074918
+======================
+ Heating up: Start
+----------------------
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 1475.5978216074918
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 1480.553922537602
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 1485.510023467712
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 1490.466124397822
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 1484.8434201918685
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 1494.1355899412026
+> Heating Up: [26C / 38C]
+> PID: Current = 26.937	 Target = 38	 Value = 858.9691193496158
+> Heating Up: [29C / 38C]
+> PID: Current = 29.0	 Target = 38	 Value = 779.8570062478353
+> Heating Up: [28C / 38C]
+> PID: Current = 28.187	 Target = 38	 Value = 1062.0334758505155
+> Heating Up: [31C / 38C]
+> PID: Current = 31.812	 Target = 38	 Value = 400.3624536600647
+> Heating Up: [31C / 38C]
+> PID: Current = 31.312	 Target = 38	 Value = 737.0729861896116
+> Heating Up: [30C / 38C]
+> PID: Current = 30.437	 Target = 38	 Value = 851.6406334516475
+> Heating Up: [29C / 38C]
+> PID: Current = 29.875	 Target = 38	 Value = 888.0060457083188
+> Heating Up: [29C / 38C]
+> PID: Current = 29.562	 Target = 38	 Value = 904.3929869822989
+> Heating Up: [29C / 38C]
+> PID: Current = 29.312	 Target = 38	 Value = 927.5253782094018
+> Heating Up: [29C / 38C]
+> PID: Current = 29.375	 Target = 38	 Value = 902.5394941975283
+> Heating Up: [29C / 38C]
+> PID: Current = 29.125	 Target = 38	 Value = 951.737436419537
+> Heating Up: [28C / 38C]
+> PID: Current = 28.875	 Target = 38	 Value = 979.3717855048953
+> Heating Up: [28C / 38C]
+> PID: Current = 28.625	 Target = 38	 Value = 1007.0890791097697
+> Heating Up: [31C / 38C]
+> PID: Current = 31.625	 Target = 38	 Value = 489.15730624674353
+> Heating Up: [31C / 38C]
+> PID: Current = 31.75	 Target = 38	 Value = 677.7575005804018
+> Heating Up: [31C / 38C]
+> PID: Current = 31.937	 Target = 38	 Value = 657.0753166528027
+> Heating Up: [31C / 38C]
+> PID: Current = 31.75	 Target = 38	 Value = 703.42006344449
+> Heating Up: [31C / 38C]
+> PID: Current = 31.25	 Target = 38	 Value = 776.5198513736444
+> Heating Up: [30C / 38C]
+> PID: Current = 30.812	 Target = 38	 Value = 817.728103091443
+> Heating Up: [30C / 38C]
+> PID: Current = 30.437	 Target = 38	 Value = 852.7906810422397
+> Heating Up: [30C / 38C]
+> PID: Current = 30.125	 Target = 38	 Value = 881.7558414743886
+> Heating Up: [29C / 38C]
+> PID: Current = 29.75	 Target = 38	 Value = 925.760292641099
+> Heating Up: [29C / 38C]
+> PID: Current = 29.375	 Target = 38	 Value = 965.5321897489409
+> Heating Up: [29C / 38C]
+> PID: Current = 29.062	 Target = 38	 Value = 995.017616041835
+> Heating Up: [28C / 38C]
+> PID: Current = 28.75	 Target = 38	 Value = 1028.726783902191
+> Heating Up: [28C / 38C]
+> PID: Current = 28.5	 Target = 38	 Value = 1052.197737195953
+> Heating Up: [28C / 38C]
+> PID: Current = 28.25	 Target = 38	 Value = 1080.039447580101
+> Heating Up: [28C / 38C]
+> PID: Current = 28.062	 Target = 38	 Value = 1097.5532148895434
+> Heating Up: [27C / 38C]
+> PID: Current = 27.875	 Target = 38	 Value = 1119.2492515066897
+> Heating Up: [27C / 38C]
+> PID: Current = 27.687	 Target = 38	 Value = 1141.2444064335475
+> Heating Up: [27C / 38C]
+> PID: Current = 27.5	 Target = 38	 Value = 1163.0648598299674
+> Heating Up: [27C / 38C]
+> PID: Current = 27.312	 Target = 38	 Value = 1185.1844315360995
+> Heating Up: [27C / 38C]
+> PID: Current = 27.125	 Target = 38	 Value = 1207.1293017117928
+> Heating Up: [27C / 38C]
+> PID: Current = 27.0	 Target = 38	 Value = 1218.7944850611348
+> Heating Up: [26C / 38C]
+> PID: Current = 26.875	 Target = 38	 Value = 1234.7889532411048
+> Heating Up: [26C / 38C]
+> PID: Current = 26.75	 Target = 38	 Value = 1250.8248936808325
+> Heating Up: [26C / 38C]
+> PID: Current = 26.562	 Target = 38	 Value = 1277.4811115163818
+> Heating Up: [26C / 38C]
+> PID: Current = 26.437	 Target = 38	 Value = 1289.2639276564012
+> Heating Up: [26C / 38C]
+> PID: Current = 26.25	 Target = 38	 Value = 1315.8560744885424
+> Heating Up: [26C / 38C]
+> PID: Current = 26.125	 Target = 38	 Value = 1327.8115636561897
+> Heating Up: [26C / 38C]
+> PID: Current = 26.0	 Target = 38	 Value = 1344.0963376544648
+> Heating Up: [25C / 38C]
+> PID: Current = 25.937	 Target = 38	 Value = 1350.0116963182763
+> Heating Up: [25C / 38C]
+> PID: Current = 25.875	 Target = 38	 Value = 1360.0678520300341
+> Heating Up: [25C / 38C]
+> PID: Current = 25.75	 Target = 38	 Value = 1380.7925413859673
+> Heating Up: [25C / 38C]
+> PID: Current = 25.687	 Target = 38	 Value = 1386.7908445692944
+> Heating Up: [25C / 38C]
+> PID: Current = 25.562	 Target = 38	 Value = 1407.5087499366316
+> Heating Up: [25C / 38C]
+> PID: Current = 25.437	 Target = 38	 Value = 1423.9803149928566
+> Heating Up: [25C / 38C]
+> PID: Current = 25.375	 Target = 38	 Value = 1429.9145471727757
+> Heating Up: [25C / 38C]
+> PID: Current = 25.312	 Target = 38	 Value = 1440.3942379735188
+> Heating Up: [25C / 38C]
+> PID: Current = 25.25	 Target = 38	 Value = 1450.657754984066
+> Heating Up: [25C / 38C]
+> PID: Current = 25.187	 Target = 38	 Value = 1461.1789180445671
+> Heating Up: [25C / 38C]
+> PID: Current = 25.125	 Target = 38	 Value = 1471.4839073148723
+> Heating Up: [25C / 38C]
+> PID: Current = 25.062	 Target = 38	 Value = 1482.0465426351313
+> Heating Up: [24C / 38C]
+> PID: Current = 24.937	 Target = 38	 Value = 1502.971809301258
+> Heating Up: [24C / 38C]
+> PID: Current = 24.875	 Target = 38	 Value = 1509.071930520209
+> Heating Up: [24C / 38C]
+> PID: Current = 24.812	 Target = 38	 Value = 1519.7175103599836
+> Heating Up: [24C / 38C]
+> PID: Current = 24.75	 Target = 38	 Value = 1530.1469164095624
+> Heating Up: [24C / 38C]
+> PID: Current = 24.75	 Target = 38	 Value = 1530.2551633730316
+> Heating Up: [24C / 38C]
+> PID: Current = 24.687	 Target = 38	 Value = 1545.2300280434342
+> Heating Up: [24C / 38C]
+> PID: Current = 24.687	 Target = 38	 Value = 1545.2900187585494
+> Heating Up: [24C / 38C]
+> PID: Current = 24.625	 Target = 38	 Value = 1560.1178679060283
+> Heating Up: [24C / 38C]
+> PID: Current = 24.625	 Target = 38	 Value = 1560.2675871292554
+> Heating Up: [24C / 38C]
+> PID: Current = 24.562	 Target = 38	 Value = 1575.283924059416
+> Heating Up: [24C / 38C]
+> PID: Current = 24.5	 Target = 38	 Value = 1585.796274628511
+> Heating Up: [24C / 38C]
+> PID: Current = 24.5	 Target = 38	 Value = 1585.9874661114957
+> Heating Up: [24C / 38C]
+> PID: Current = 24.437	 Target = 38	 Value = 1601.0452753014144
+> Heating Up: [24C / 38C]
+> PID: Current = 24.437	 Target = 38	 Value = 1601.1882105360453
+> Heating Up: [24C / 38C]
+> PID: Current = 24.437	 Target = 38	 Value = 1605.6881166088185
+> Heating Up: [24C / 38C]
+> PID: Current = 24.375	 Target = 38	 Value = 1620.598910275813
+> Heating Up: [24C / 38C]
+> PID: Current = 24.375	 Target = 38	 Value = 1620.831574018556
+> Heating Up: [24C / 38C]
+> PID: Current = 24.312	 Target = 38	 Value = 1635.9308554682323
+> Heating Up: [24C / 38C]
+> PID: Current = 24.312	 Target = 38	 Value = 1636.1152629626215
+> Heating Up: [24C / 38C]
+> PID: Current = 24.312	 Target = 38	 Value = 1640.6566412951522
+> Heating Up: [24C / 38C]
+> PID: Current = 24.25	 Target = 38	 Value = 1655.608907221905
+> Heating Up: [24C / 38C]
+> PID: Current = 24.25	 Target = 38	 Value = 1655.8830432244056
+> Heating Up: [24C / 38C]
+> PID: Current = 24.187	 Target = 38	 Value = 1671.0237969338398
+> Heating Up: [24C / 38C]
+> PID: Current = 24.187	 Target = 38	 Value = 1671.2496766879867
+> Heating Up: [24C / 38C]
+> PID: Current = 24.187	 Target = 38	 Value = 1675.8325272802756
+> Heating Up: [24C / 38C]
+> PID: Current = 24.125	 Target = 38	 Value = 1690.826265466786
+> Heating Up: [24C / 38C]
+> PID: Current = 24.125	 Target = 38	 Value = 1691.1418737290448
+> Heating Up: [24C / 38C]
+> PID: Current = 24.125	 Target = 38	 Value = 1695.7452945621735
+> Heating Up: [24C / 38C]
+> PID: Current = 24.125	 Target = 38	 Value = 1700.3487153953022
+> Heating Up: [24C / 38C]
+> PID: Current = 24.125	 Target = 38	 Value = 1704.952136228431
+> Heating Up: [24C / 38C]
+> PID: Current = 24.125	 Target = 38	 Value = 1709.5555570615597
+> Heating Up: [24C / 38C]
+> PID: Current = 24.062	 Target = 38	 Value = 1724.737783030752
+> Heating Up: [24C / 38C]
+> PID: Current = 24.0	 Target = 38	 Value = 1735.4160226388788
+> Heating Up: [24C / 38C]
+> PID: Current = 24.0	 Target = 38	 Value = 1735.7731031608953
+> Heating Up: [23C / 38C]
+> PID: Current = 23.937	 Target = 38	 Value = 1750.9968013898456
+> Heating Up: [23C / 38C]
+> PID: Current = 23.937	 Target = 38	 Value = 1751.3056256635084
+> Heating Up: [23C / 38C]
+> PID: Current = 23.937	 Target = 38	 Value = 1755.971420775313
+> Heating Up: [23C / 38C]
+> PID: Current = 23.937	 Target = 38	 Value = 1760.6372158871177
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1775.713898593144
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1776.1124513749185
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1780.7988167275632
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1785.4851820802078
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1790.1715474328523
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1794.8579127854969
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1799.5442781381414
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1804.2306434907862
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1808.9170088434307
+> Heating Up: [23C / 38C]
+> PID: Current = 23.875	 Target = 38	 Value = 1813.6033741960753
+> Heating Up: [23C / 38C]
+> PID: Current = 23.812	 Target = 38	 Value = 1828.8685446847835
+> Heating Up: [23C / 38C]
+> PID: Current = 23.812	 Target = 38	 Value = 1829.2188412182043
+> Heating Up: [23C / 38C]
+> PID: Current = 23.812	 Target = 38	 Value = 1833.9261085897667
+> Heating Up: [23C / 38C]
+> PID: Current = 23.812	 Target = 38	 Value = 1838.6333759613294
+> Heating Up: [23C / 38C]
+> PID: Current = 23.812	 Target = 38	 Value = 1843.3406433328921
+> Heating Up: [23C / 38C]
+> PID: Current = 23.812	 Target = 38	 Value = 1848.0479107044546
+> Heating Up: [23C / 38C]
+> PID: Current = 23.812	 Target = 38	 Value = 1852.7551780760173
+> Heating Up: [23C / 38C]
+> PID: Current = 23.812	 Target = 38	 Value = 1857.46244544758
+> Heating Up: [23C / 38C]
+> PID: Current = 23.812	 Target = 38	 Value = 1862.1697128191424
+> Heating Up: [23C / 38C]
+> PID: Current = 23.75	 Target = 38	 Value = 1877.287867784927
+> Heating Up: [23C / 38C]
+> PID: Current = 23.75	 Target = 38	 Value = 1877.7278928264593
+> Heating Up: [23C / 38C]
+> PID: Current = 23.75	 Target = 38	 Value = 1882.4557304388618
+> Heating Up: [23C / 38C]
+> PID: Current = 23.75	 Target = 38	 Value = 1887.1835680512643
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1902.4902107997302
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1902.881979592909
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1907.6307192242296
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1912.37945885555
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1917.1281984868706
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1921.8769381181912
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1926.6256777495116
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1931.374417380832
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1936.1231570121527
+> Heating Up: [23C / 38C]
+> PID: Current = 23.687	 Target = 38	 Value = 1940.8718966434733
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 1956.0315238690155
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 1956.5130211703058
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 1961.2823310424662
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 1966.0516409146267
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 1970.820950786787
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 1986.169065795011
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 1986.6023068479474
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 1991.3925187390257
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 1996.1827306301043
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 2000.9729425211829
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 2005.7631544122612
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 2010.5533663033395
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 2015.3435781944181
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2009.5549849494332
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 2029.2600707957988
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2019.114506712672
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2028.2407874229746
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2033.0100972951348
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2037.7794071672954
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2042.5487170394556
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2047.3180269116162
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2052.0873367837767
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2056.8566466559373
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2061.625956528098
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2066.395266400258
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2071.1645762724183
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2075.933886144579
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2080.7031960167396
+> Heating Up: [23C / 38C]
+> PID: Current = 23.625	 Target = 38	 Value = 2085.4725058889
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 2100.8206208971237
+> Heating Up: [23C / 38C]
+> PID: Current = 23.562	 Target = 38	 Value = 2101.25386195006
+> Heating Up: [23C / 38C]
+> PID: Current = 23.5	 Target = 38	 Value = 2116.45496143536
+> Heating Up: [23C / 38C]
+> PID: Current = 23.5	 Target = 38	 Value = 2116.9779309964088
+> Heating Up: [23C / 38C]
+> PID: Current = 23.437	 Target = 38	 Value = 2132.3675182643906
+> Heating Up: [23C / 38C]
+> PID: Current = 23.437	 Target = 38	 Value = 2132.842231577085
+> Heating Up: [23C / 38C]
+> PID: Current = 23.375	 Target = 38	 Value = 2148.0848033221428
+> Heating Up: [23C / 38C]
+> PID: Current = 23.375	 Target = 38	 Value = 2148.649245142949
+> Heating Up: [23C / 38C]
+> PID: Current = 23.375	 Target = 38	 Value = 2153.5014995346255
+> Heating Up: [23C / 38C]
+> PID: Current = 23.375	 Target = 38	 Value = 2158.3537539263016
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2173.7848134540413
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2174.3009990264936
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2179.1741554370883
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2184.0473118476825
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2188.9204682582767
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2193.793624668871
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2198.666781079465
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2203.5399374900594
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2208.4130939006536
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2213.2862503112483
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2218.1594067218425
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2223.0325631324367
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2227.905719543031
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2232.778875953625
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2237.6520323642194
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2242.5251887748136
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2247.3983451854083
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2252.2715015960025
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2257.1446580065967
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2262.017814417191
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2266.890970827785
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2271.7641272383794
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2276.6372836489736
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2281.5104400595683
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2286.3835964701625
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2291.2567528807567
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2296.129909291351
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2301.003065701945
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2305.8762221125394
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2310.7493785231336
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2315.6225349337283
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2320.4956913443225
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2325.3688477549167
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2340.6528917597325
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2341.2588058402966
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2346.152532491731
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2351.046259143165
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2355.939985794599
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2360.8337124460336
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2365.7274390974676
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2370.621165748902
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2375.514892400336
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2380.40861905177
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2385.302345703204
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2390.1960723546385
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2405.6686041421362
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2406.2262619743465
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2400.5620855086354
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2409.8127829982113
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2414.7065096496453
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2409.1893487068583
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2418.3503176883223
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2423.2234740989165
+> Heating Up: [23C / 38C]
+> PID: Current = 23.312	 Target = 38	 Value = 2428.0966305095108
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2443.380674514327
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2443.986588594891
+> Heating Up: [23C / 38C]
+> PID: Current = 23.25	 Target = 38	 Value = 2448.880315246325
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2464.352847033823
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2464.910504866033
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2469.8251335363857
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2474.7397622067374
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2479.65439087709
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2484.5690195474417
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2489.4836482177943
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2494.3982768881465
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2499.3129055584986
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2514.6384218230723
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2515.2858081633944
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2520.221007074587
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2514.745318391557
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2523.9477596327793
+> Heating Up: [23C / 38C]
+> PID: Current = 23.187	 Target = 38	 Value = 2528.8623883031314
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2544.187904567705
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2544.8352909080277
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2549.7704898192196
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2554.7056887304116
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2559.6408876416035
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2564.576086552796
+> Heating Up: [23C / 38C]
+> PID: Current = 23.125	 Target = 38	 Value = 2569.511285463988
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2585.0252895112435
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2585.6244196032117
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2590.5805205333218
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2595.5366214634323
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2600.492722393542
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2605.4488233236525
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2610.404924253762
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2625.7719127780942
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2626.4607713781743
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2631.437442549124
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2636.414113720074
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2641.390784891024
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2646.367456061974
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2651.344127232924
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2656.320798403874
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2661.2974695748244
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2666.2741407457743
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2671.250811916724
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2676.227483087674
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2681.204154258624
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2686.1808254295743
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2691.157496600524
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2696.1341677714745
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2701.1108389424244
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2706.0875101133743
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2700.6532936901026
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2709.897207191083
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2714.8533081211926
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2719.809409051303
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2724.7655099814133
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2729.7216109115234
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2745.088599435855
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2745.777458035935
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2750.754129206885
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2755.7308003778353
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2750.296583954563
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2769.951385049765
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2770.640243649845
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2765.2060272265735
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2774.449940727554
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2779.406041657664
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2784.362142587774
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2789.318243517884
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2794.2743444479943
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2809.6413329723264
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2810.330191572406
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2815.306862743356
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2820.2835339143057
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2825.260205085256
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2830.236876256206
+> Heating Up: [23C / 38C]
+> PID: Current = 23.062	 Target = 38	 Value = 2824.8026598329343
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2844.4574609281362
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2845.1463195282163
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2850.122990699166
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2855.0996618701165
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2870.6551381771296
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2871.2957405288557
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2876.2933137187238
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2881.290886908592
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2886.28846009846
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2891.286033288328
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2896.283606478196
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2901.281179668064
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2906.278752857932
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2911.2763260478
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2916.273899237668
+> Heating Up: [23C / 38C]
+> PID: Current = 23.0	 Target = 38	 Value = 2910.6926672914724
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2930.605114436628
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2931.245716788354
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2936.243289978222
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2941.24086316809
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2946.238436357958
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2951.236009547826
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2956.233582737694
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2961.231155927562
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2966.2287291174307
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2971.2263023072983
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2976.223875497167
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2981.2214486870344
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2986.219021876903
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2991.2165950667704
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 2996.214168256639
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 3001.2117414465065
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 3006.209314636375
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 3011.2068878262426
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 3016.204461016111
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3031.6129218002006
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3032.343252660038
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3037.361396090746
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3042.3795395214543
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 3036.9867953579405
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 3046.2721811186784
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 3051.269754308547
+> Heating Up: [22C / 38C]
+> PID: Current = 22.937	 Target = 38	 Value = 3056.2673274984145
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3071.675788282504
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3072.406119142342
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3077.4242625730503
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3082.442406003758
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3087.460549434466
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3092.478692865174
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3097.4968362958816
+> Heating Up: [22C / 38C]
+> PID: Current = 22.812	 Target = 38	 Value = 3113.0937848626536
+> Heating Up: [22C / 38C]
+> PID: Current = 22.812	 Target = 38	 Value = 3113.775859474137
+> Heating Up: [22C / 38C]
+> PID: Current = 22.812	 Target = 38	 Value = 3118.8149049237636
+> Heating Up: [22C / 38C]
+> PID: Current = 22.812	 Target = 38	 Value = 3123.853950373389
+> Heating Up: [22C / 38C]
+> PID: Current = 22.812	 Target = 38	 Value = 3128.892995823015
+> Heating Up: [22C / 38C]
+> PID: Current = 22.812	 Target = 38	 Value = 3133.932041272641
+> Heating Up: [22C / 38C]
+> PID: Current = 22.812	 Target = 38	 Value = 3138.971086722267
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3133.43132703583
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3142.8064413046795
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3147.8245847353874
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3152.842728166095
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3157.860871596803
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3162.879015027511
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3167.897158458219
+> Heating Up: [22C / 38C]
+> PID: Current = 22.875	 Target = 38	 Value = 3172.915301888927
